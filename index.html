@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Diva Lomas | Consultoría de Imagen & Personal Styling — Los Angeles, CA</title>
+    <meta name="description" content="18 años diseñando la imagen de quienes no pueden darse el lujo de pasar desapercibidos. Consultoría de imagen, styling y estrategia de marca personal en Los Angeles.">
+    <meta property="og:title" content="Diva Lomas | Consultoría de Imagen & Personal Styling">
+    <meta property="og:description" content="La imagen no es estética — es estrategia. Consultoría de imagen, styling y estrategia de marca personal en Los Angeles.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='50' y='68' font-size='58' fill='%2300af12' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='bold'%3EDL%3C/text%3E%3C/svg%3E">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tipografía de marca: Arial. Bold para títulos/jerarquía, Regular para texto de cuerpo. -->
+    <!-- FontAwesome para íconos sociales minimalistas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#00af12',
+                        brandGreenDark: '#00860d',
+                        editorialGrey: '#f9f9f9',
+                    },
+                    fontFamily: {
+                        serif: ['Arial', 'Helvetica', 'sans-serif'],
+                        sans: ['Arial', 'Helvetica', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            background-color: #ffffff;
+            color: #000000;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        /* ============================================
+           RESPONSIVIDAD CROSS-DEVICE
+           iPhone (con/sin notch), Android, tablets, desktop
+           ============================================ */
+
+        /* Áreas seguras para iPhone con notch / Dynamic Island y Android con gestos */
+        :root {
+            --safe-top: env(safe-area-inset-top, 0px);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+            --safe-left: env(safe-area-inset-left, 0px);
+            --safe-right: env(safe-area-inset-right, 0px);
+        }
+
+        /* Objetivos táctiles mínimos de 44px (estándar iOS/Android) en botones de ícono */
+        button, a[role="button"] {
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+        .tap-target {
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        /* Evita el auto-zoom de iOS Safari al enfocar inputs (ocurre si font-size < 16px) */
+        @media (max-width: 767px) {
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+        }
+
+        /* Imágenes: comportamiento responsivo seguro por defecto en todo el sitio */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            -webkit-user-drag: none;
+            user-select: none;
+        }
+        /* Las imágenes posicionadas en absoluto (heros, tarjetas, modal) llenan su contenedor */
+        .absolute > img,
+        img.absolute {
+            max-width: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Hero: usa dvh (viewport dinámico) para evitar saltos por la barra de Safari/Chrome móvil,
+           con vh como respaldo para navegadores que no soportan dvh */
+        .hero-viewport {
+            height: 85vh;
+        }
+        @supports (height: 85dvh) {
+            .hero-viewport {
+                height: 85dvh;
+            }
+        }
+        @media (max-width: 640px) {
+            .hero-viewport {
+                height: 78vh;
+                min-height: 480px;
+            }
+            @supports (height: 78dvh) {
+                .hero-viewport {
+                    height: 78dvh;
+                }
+            }
+        }
+
+        h1, h2, h3, h4, .font-editorial {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+        }
+        /* Refuerzo: cualquier peso heredado en títulos siempre cae en Bold */
+        h1, h2, h3, h4 {
+            font-weight: 700 !important;
+        }
+        /* Custom smooth scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #000000;
+        }
+        /* Custom image transitions */
+        .img-hover-zoom {
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .img-hover-zoom:hover {
+            transform: scale(1.03);
+        }
+        /* Accessible focus states — visible keyboard navigation */
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 2px solid #00af12;
+            outline-offset: 3px;
+        }
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            z-index: 100;
+            background: #000;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .skip-link:focus {
+            left: max(1rem, var(--safe-left));
+            top: max(1rem, var(--safe-top));
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        /* Popup de entrada / captura de contacto editorial */
+        #entry-popup {
+            transition: opacity 0.4s ease;
+            padding-top: max(1.25rem, var(--safe-top));
+            padding-bottom: max(1.25rem, var(--safe-bottom));
+        }
+        #entry-popup .popup-panel {
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+            max-height: 90vh;
+            max-height: 90dvh;
+            overflow-y: auto;
+        }
+        #entry-popup.hidden-popup {
+            opacity: 0;
+            pointer-events: none;
+        }
+        #entry-popup.hidden-popup .popup-panel {
+            transform: scale(0.96) translateY(8px);
+            opacity: 0;
+        }
+        /* Modal de caso de estudio (portafolio) */
+        #case-modal {
+            transition: opacity 0.45s ease;
+            opacity: 1;
+        }
+        #case-modal.hidden-case {
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+        }
+        #case-modal .case-fade {
+            animation: caseFadeIn 0.5s ease both;
+        }
+        @keyframes caseFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Floating discreet CTA */
+        #float-cta {
+            opacity: 0;
+            transform: translateY(12px);
+            pointer-events: none;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        #float-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-brandGreen/20 selection:text-black">
+
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Header / Navegación: Barra superior blanca, transparente en el Hero, sólida con scroll -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-black/10" style="padding-top: var(--safe-top);">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+            <!-- Brand Name (Logo minimalista) -->
+            <a href="#" onclick="switchTab('home'); return false;" class="text-xl md:text-2xl tracking-widest font-bold uppercase">
+                DIVA LOMAS <span class="text-[8px] tracking-normal font-sans font-normal block align-super text-right -mt-2 normal-case">Image & Brand Strategy</span>
+            </a>
+
+            <!-- Mobile menu button -->
+            <button onclick="toggleMobileMenu()" id="mobile-menu-btn" class="xl:hidden p-2 -mr-2 tap-target flex items-center justify-center text-black focus:outline-none" aria-label="Abrir Menú" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="hidden xl:flex items-center space-x-6 2xl:space-x-10">
+                <button onclick="switchTab('home')" id="nav-home" class="nav-item text-xs uppercase tracking-[0.2em] font-medium py-2 transition-all duration-300 border-b-2 border-transparent hover:text-brandGreen hover:border-brandGreen">Home</button>
+                <button onclick="switchTab('servicios')" id="nav-servicios" class="nav-item text-xs uppercase tracking-[0.2em] font-medium py-2 transition-all duration-300 border-b-2 border-transparent hover:text-brandGreen hover:border-brandGreen">Servicios</button>
+                <button onclick="switchTab('thefake')" id="nav-thefake" class="nav-item text-xs uppercase tracking-[0.2em] font-medium py-2 transition-all duration-300 border-b-2 border-transparent hover:text-brandGreen hover:border-brandGreen">The Fake Studio</button>
+                <button onclick="switchTab('portafolio')" id="nav-portafolio" class="nav-item text-xs uppercase tracking-[0.2em] font-medium py-2 transition-all duration-300 border-b-2 border-transparent hover:text-brandGreen hover:border-brandGreen">Portafolio / Trabajo</button>
+                <button onclick="switchTab('sobremi')" id="nav-sobremi" class="nav-item text-xs uppercase tracking-[0.2em] font-medium py-2 transition-all duration-300 border-b-2 border-transparent hover:text-brandGreen hover:border-brandGreen">Sobre mí</button>
+                <button onclick="switchTab('contacto')" id="nav-contacto" class="nav-item text-xs uppercase tracking-[0.2em] font-medium py-2 transition-all duration-300 border-b-2 border-transparent hover:text-brandGreen hover:border-brandGreen">Contacto</button>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu (Drawer) -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-black px-6 py-8 transition-all duration-300 max-h-[calc(100vh-5rem)] overflow-y-auto">
+            <div class="flex flex-col space-y-6">
+                <button onclick="switchTab('home')" class="mobile-nav-item text-left text-sm uppercase tracking-widest font-medium py-1 transition-colors duration-300 hover:text-brandGreen active:text-brandGreen">Home</button>
+                <button onclick="switchTab('servicios')" class="mobile-nav-item text-left text-sm uppercase tracking-widest font-medium py-1 transition-colors duration-300 hover:text-brandGreen active:text-brandGreen">Servicios</button>
+                <button onclick="switchTab('thefake')" class="mobile-nav-item text-left text-sm uppercase tracking-widest font-medium py-1 transition-colors duration-300 hover:text-brandGreen active:text-brandGreen">The Fake Studio</button>
+                <button onclick="switchTab('portafolio')" class="mobile-nav-item text-left text-sm uppercase tracking-widest font-medium py-1 transition-colors duration-300 hover:text-brandGreen active:text-brandGreen">Portafolio / Trabajo</button>
+                <button onclick="switchTab('sobremi')" class="mobile-nav-item text-left text-sm uppercase tracking-widest font-medium py-1 transition-colors duration-300 hover:text-brandGreen active:text-brandGreen">Sobre mí</button>
+                <button onclick="switchTab('contacto')" class="mobile-nav-item text-left text-sm uppercase tracking-widest font-medium py-1 transition-colors duration-300 hover:text-brandGreen active:text-brandGreen">Contacto</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-20 min-h-screen flex flex-col justify-between">
+        
+        <!-- ============================================== -->
+        <!-- ============================================== -->
+        <section id="view-home" class="tab-view opacity-100 transition-opacity duration-500">
+            <!-- Hero Section -->
+            <div class="hero-viewport relative w-full overflow-hidden flex items-center justify-center bg-zinc-100">
+                <!-- Background Editorial Image -->
+                <img loading="eager" fetchpriority="high" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1920" 
+                     alt="Editorial de Moda Blanco y Negro" 
+                     class="absolute inset-0 w-full h-full object-cover grayscale contrast-115 brightness-95"
+                     onerror="this.src='https://placehold.co/1920x1080/e5e5e5/000000?text=Editorial+Fashion+Placeholder'">
+                
+                <!-- Overlay Darkening slightly for text readability -->
+                <div class="absolute inset-0 bg-black/5"></div>
+
+                <!-- Text Overlay Content -->
+                <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex justify-start items-end pb-16 h-full">
+                    <div class="bg-white/90 backdrop-blur-sm p-8 md:p-12 max-w-2xl border-l-4 border-black">
+                        <span class="text-xs uppercase tracking-[0.3em] text-zinc-500 block mb-3">Consultoría de Imagen & Estrategia de Marca Personal</span>
+                        <h1 class="text-4xl md:text-6xl font-bold leading-none tracking-tight text-black mb-6">
+                            Tu imagen <br><span class="italic font-normal">habla antes que tú.</span>
+                        </h1>
+                        <p class="text-sm text-zinc-700 tracking-wide leading-relaxed font-normal mb-8">
+                            18 años diseñando la imagen de quienes no pueden darse el lujo de pasar desapercibidos. Trabajo con mujeres y marcas que entienden que la imagen no es estética — es estrategia.
+                        </p>
+                        <div>
+                            <button onclick="switchTab('servicios')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-white bg-transparent">
+                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Ver Servicios</span>
+                                <div class="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ticker Section: Authority figures separated by brand green dots -->
+            <div class="border-y border-black py-6 bg-white overflow-hidden">
+                <div class="max-w-7xl mx-auto px-6 md:px-12">
+                    <div class="flex flex-col md:flex-row flex-wrap justify-center md:justify-between gap-y-4 gap-x-10 items-center text-center">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-sm font-normal uppercase tracking-widest">Años en Relaciones Públicas</span>
+                            <span class="text-brandGreen text-lg">•</span>
+                            <span class="text-2xl tracking-wider font-bold">18</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-sm font-normal uppercase tracking-widest">Años como Image Maker</span>
+                            <span class="text-brandGreen text-lg">•</span>
+                            <span class="text-2xl tracking-wider font-bold">6</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-sm font-normal uppercase tracking-widest">Comunidad en TikTok</span>
+                            <span class="text-brandGreen text-lg">•</span>
+                            <span class="text-2xl tracking-wider font-bold">1.3M</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-sm font-normal uppercase tracking-widest">Comunidad en Instagram</span>
+                            <span class="text-brandGreen text-lg">•</span>
+                            <span class="text-2xl tracking-wider font-bold">310K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- "Como se ha visto en" — prueba social pasiva, solo texto, sin logos ni IP de terceros -->
+            <div class="max-w-7xl mx-auto px-6 md:px-12 pt-16">
+                <p class="text-center text-[10px] uppercase tracking-[0.4em] text-zinc-400 mb-6">Como se ha visto en</p>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 text-zinc-400">
+                    <span class="text-sm italic tracking-wide font-normal">Marie Claire</span>
+                    <span class="text-sm italic tracking-wide font-normal">People en Español</span>
+                    <span class="text-sm italic tracking-wide font-normal">Vanity Fair France</span>
+                    <span class="text-sm italic tracking-wide font-normal">Vogue México</span>
+                </div>
+            </div>
+
+            <!-- Editorial Feature Section with generous spacing -->
+            <div class="max-w-7xl mx-auto px-6 md:px-12 py-32">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                    <div class="lg:col-span-5 space-y-8">
+                        <span class="text-[10px] text-brandGreen font-semibold uppercase tracking-[0.4em]">MANIFIESTO</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
+                            "La imagen no es estética — es <span class="italic font-normal">estrategia</span>."
+                        </h2>
+                        <div class="h-[1px] w-16 bg-black"></div>
+                        <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                            Cada proyecto comienza con una conversación. Lo que sigue depende de dónde estás y adónde vas. He colaborado con perfiles como Roselyn Sánchez, Eric Winter, Angélica Vale y Manelyk González, y con firmas como Zimmermann, Dolce & Gabbana, Simkhai, Alice and Olivia y Alexis Bittar.
+                        </p>
+                        <div class="pt-4">
+                            <button onclick="switchTab('sobremi')" class="text-xs uppercase tracking-widest font-semibold border-b border-black pb-1 hover:text-brandGreen hover:border-brandGreen transition-colors duration-300">
+                                Leer el Manifiesto Completo &rarr;
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+                        <div class="overflow-hidden bg-zinc-100 aspect-[3/4]">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800" 
+                                 alt="Editorial de Moda Concepto 1" 
+                                 class="img-hover-zoom w-full h-full object-cover grayscale"
+                                 onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Editorial+1'">
+                        </div>
+                        <div class="overflow-hidden bg-zinc-100 aspect-[3/4] translate-y-8">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800" 
+                                 alt="Editorial de Moda Concepto 2" 
+                                 class="img-hover-zoom w-full h-full object-cover grayscale"
+                                 onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Editorial+2'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home Closing Section: Fondo negro reservado para impacto visual -->
+            <div class="bg-black text-white py-24">
+                <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+                    <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-bold">EMPEZAR EL CAMBIO</span>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-wide leading-tight">
+                        Eleva tu presencia pública a niveles de alta costura conceptual.
+                    </h2>
+                    <p class="text-xs text-zinc-400 max-w-lg mx-auto leading-relaxed tracking-widest uppercase">
+                        Diseñado para directores creativos, consultores, figuras públicas e identidades singulares.
+                    </p>
+                    <div class="pt-6">
+                        <button onclick="switchTab('contacto')" class="px-8 py-4 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-brandGreen hover:border hover:border-brandGreen transition-all duration-300 shadow-lg">
+                            RESERVAR DIAGNÓSTICO SIN COSTO
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- ============================================== -->
+        <section id="view-servicios" class="tab-view hidden opacity-0 transition-opacity duration-500">
+            <!-- Intro de página centrada sobre fondo blanco -->
+            <div class="max-w-4xl mx-auto px-6 text-center py-20 md:py-32">
+                <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-semibold">SERVICIOS</span>
+                <h1 class="text-5xl md:text-6xl font-bold tracking-tight mt-4 mb-8">Diva Lomas</h1>
+                <div class="h-[1px] w-24 bg-black mx-auto mb-8"></div>
+                <p class="text-lg md:text-xl italic font-normal text-zinc-800 leading-relaxed max-w-2xl mx-auto mb-6">
+                    18 años diseñando la imagen de quienes no pueden darse el lujo de pasar desapercibidos.
+                </p>
+                <p class="text-sm text-zinc-600 leading-relaxed font-normal max-w-2xl mx-auto mb-4">
+                    Trabajo con mujeres y marcas que entienden que la imagen no es estética — es estrategia.
+                </p>
+                <p class="text-sm text-zinc-600 leading-relaxed font-normal max-w-2xl mx-auto">
+                    Cada proyecto comienza con una conversación. Lo que sigue depende de dónde estás y adónde vas.
+                </p>
+            </div>
+
+            <!-- Bloques alternando Imagen/Texto separados por líneas finas de 1px -->
+            <div class="max-w-7xl mx-auto px-6 md:px-12 pb-24">
+
+                <!-- Bloque 1: Diagnóstico de Imagen — SESIÓN FIJA -->
+                <div class="border-t border-black/10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                    <div class="overflow-hidden bg-zinc-50 aspect-[4/3]">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=1200"
+                             alt="Diagnóstico de Imagen"
+                             class="img-hover-zoom w-full h-full object-cover grayscale"
+                             onerror="this.src='https://placehold.co/800x600/e5e5e5/000000?text=Diagnostico+de+Imagen'">
+                    </div>
+                    <div class="space-y-6">
+                        <span class="inline-block text-[9px] text-brandGreen border border-brandGreen px-2.5 py-1 tracking-widest font-bold uppercase">Sesión fija</span>
+                        <h3 class="text-3xl md:text-4xl font-bold tracking-tight">Diagnóstico de Imagen</h3>
+                        <p class="text-sm text-zinc-500 italic font-normal">La claridad antes de cualquier inversión.</p>
+                        <p class="text-[10px] uppercase tracking-widest text-zinc-400">Modalidad: Online vía Zoom</p>
+
+                        <div class="space-y-4 text-sm text-zinc-600 leading-relaxed font-normal">
+                            <p>Una sesión privada 1:1 donde analizamos tu imagen exactamente desde donde estás hoy.</p>
+                            <p>Sin fórmulas genéricas. Sin listas de tendencias que no tienen nada que ver contigo. Una conversación directa sobre qué está funcionando, qué no, y qué necesita cambiar para que tu imagen empiece a trabajar para ti.</p>
+                            <p class="text-xs text-zinc-500">Dependiendo del formato que elijas, cubrimos: silueta, proporciones y fit real — colorimetría personalizada aplicada a ropa, maquillaje, cabello y accesorios — presencia digital y auditoría de marca personal en redes — compras estratégicas — looks para trabajo, eventos o cámara — y lo que debes evitar según tu estilo de vida y objetivos.</p>
+                            <p class="text-xs text-zinc-500">Al finalizar cada sesión recibes: Fashion Analysis → tu Image Book personalizado. Color Analysis → tu Image Book + acceso a tu aplicación digital de color. Digital Styling → diagnóstico completo de presencia digital + plan de acción.</p>
+                        </div>
+
+                        <div class="border border-black/10 divide-y divide-black/10 mt-6">
+                            <div class="flex justify-between items-center px-4 py-3 text-xs">
+                                <span class="uppercase tracking-widest text-zinc-500">Fashion Analysis Express</span>
+                                <span class="font-semibold">1h · $99 · Compra directa</span>
+                            </div>
+                            <div class="flex justify-between items-center px-4 py-3 text-xs">
+                                <span class="uppercase tracking-widest text-zinc-500">Fashion Analysis</span>
+                                <span class="font-semibold">2h · $250 · Online</span>
+                            </div>
+                            <div class="flex justify-between items-center px-4 py-3 text-xs">
+                                <span class="uppercase tracking-widest text-zinc-500">Color Analysis</span>
+                                <span class="font-semibold">2h · $250 · Online</span>
+                            </div>
+                            <div class="flex justify-between items-center px-4 py-3 text-xs">
+                                <span class="uppercase tracking-widest text-zinc-500">Digital Styling</span>
+                                <span class="font-semibold">2h · $250 · Online</span>
+                            </div>
+                        </div>
+                        <p class="text-[10px] text-zinc-400 uppercase tracking-widest">Los formatos de $250 requieren una llamada de 15 minutos previa para confirmar el formato correcto.</p>
+
+                        <div class="pt-4">
+                            <button onclick="switchTab('contacto')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-black hover:bg-brandGreen text-black bg-transparent">
+                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Ver opciones</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: Estrategia de Guardarropa — PROGRAMA -->
+                <div class="border-t border-black/10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                    <div class="space-y-6 order-2 lg:order-1">
+                        <span class="inline-block text-[9px] text-brandGreen border border-brandGreen px-2.5 py-1 tracking-widest font-bold uppercase">Programa</span>
+                        <h3 class="text-3xl md:text-4xl font-bold tracking-tight">Estrategia de Guardarropa</h3>
+                        <p class="text-sm text-zinc-500 italic font-normal">Tu closet como herramienta, no como problema.</p>
+                        <p class="text-[10px] uppercase tracking-widest text-zinc-400">Modalidad: Online o presencial en Los Ángeles</p>
+
+                        <div class="space-y-4 text-sm text-zinc-600 leading-relaxed font-normal">
+                            <p>Para mujeres que ya tienen ropa — probablemente demasiada — pero sienten que nada funciona en conjunto.</p>
+                            <p>Trabajo directamente sobre tu guardarropa existente: lo audito, lo edito, lo reorganizo y construimos looks reales con lo que ya tienes. Cuando hay vacíos estratégicos, definimos qué comprar y por qué — no por impulso.</p>
+                            <p>Este es un programa personalizado. El formato, alcance y entregables se definen contigo en la primera sesión según tus objetivos, tu guardarropa actual y tu estilo de vida.</p>
+                        </div>
+                        <p class="text-[10px] text-zinc-400 uppercase tracking-widest">Inversión mínima para Personal Shopping: $2,000 USD en compras · Precio por cotización · Requiere llamada de diagnóstico previa.</p>
+
+                        <div class="pt-4">
+                            <button onclick="switchTab('contacto')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-black hover:bg-brandGreen text-black bg-transparent">
+                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Agendar llamada</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden bg-zinc-50 aspect-[4/3] order-1 lg:order-2">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&q=80&w=1200"
+                             alt="Estrategia de Guardarropa"
+                             class="img-hover-zoom w-full h-full object-cover grayscale"
+                             onerror="this.src='https://placehold.co/800x600/e5e5e5/000000?text=Estrategia+de+Guardarropa'">
+                    </div>
+                </div>
+
+                <!-- Bloque 3: Image Design Project — PROGRAMA / LISTA DE ESPERA -->
+                <div class="border-t border-black/10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                    <div class="overflow-hidden bg-zinc-50 aspect-[4/3] relative">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1200"
+                             alt="Image Design Project"
+                             class="img-hover-zoom w-full h-full object-cover grayscale"
+                             onerror="this.src='https://placehold.co/800x600/e5e5e5/000000?text=Image+Design+Project'">
+                        <span class="absolute top-4 left-4 bg-black text-white text-[9px] uppercase tracking-widest px-3 py-1.5">Lista de espera</span>
+                    </div>
+                    <div class="space-y-6">
+                        <span class="inline-block text-[9px] text-brandGreen border border-brandGreen px-2.5 py-1 tracking-widest font-bold uppercase">Programa</span>
+                        <h3 class="text-3xl md:text-4xl font-bold tracking-tight">Image Design Project</h3>
+                        <p class="text-sm text-zinc-500 italic font-normal">Arquitectura completa de imagen de marca personal.</p>
+                        <p class="text-[10px] uppercase tracking-widest text-zinc-400">Modalidad: Online o presencial · Proceso multi-semana</p>
+
+                        <div class="space-y-4 text-sm text-zinc-600 leading-relaxed font-normal">
+                            <p>Este no es un servicio de styling. Es un proyecto de consultoría donde construyo desde cero — o reconstruyo — el ecosistema visual y de comunicación que define cómo eres percibida en público.</p>
+                            <p>No te digo qué ponerte. Estudio quién eres, defino quién necesitas ser visualmente, y entrego el sistema completo para llegar ahí.</p>
+                            <p>Es el servicio más profundo que ofrezco. El proceso, alcance y duración se diseñan completamente a tu medida.</p>
+                        </div>
+                        <p class="text-[10px] text-zinc-400 uppercase tracking-widest">Cupo muy limitado — actualmente en lista de espera · Precio por cotización · No hay cotización sin conversación previa.</p>
+
+                        <div class="pt-4">
+                            <button onclick="switchTab('contacto')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-black hover:bg-brandGreen text-black bg-transparent">
+                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Unirme a la lista de espera</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 4: Visibilidad & Posicionamiento — PROGRAMA -->
+                <div class="border-t border-black/10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                    <div class="space-y-6 order-2 lg:order-1">
+                        <span class="inline-block text-[9px] text-brandGreen border border-brandGreen px-2.5 py-1 tracking-widest font-bold uppercase">Programa</span>
+                        <h3 class="text-3xl md:text-4xl font-bold tracking-tight">Visibilidad & Posicionamiento</h3>
+                        <p class="text-sm text-zinc-500 italic font-normal">Para quienes ya tienen base y necesitan ser vistas en los espacios correctos.</p>
+                        <p class="text-[10px] uppercase tracking-widest text-zinc-400">Modalidad: Online o presencial</p>
+
+                        <div class="space-y-4 text-sm text-zinc-600 leading-relaxed font-normal">
+                            <p>Este no es un servicio para empezar desde cero. Es para mujeres, marcas personales y perfiles públicos que ya tienen una trayectoria sólida y están listas para invertir en percepción, presencia y construcción de reputación a otro nivel.</p>
+                            <p>Trabajo en la intersección de imagen, relaciones públicas y estrategia de marca. El alcance de cada proyecto — prensa, eventos, redes, posicionamiento, narrativa de marca — se define después de entender tu situación específica.</p>
+                            <p>Ideal para emprendedoras y ejecutivas de alto perfil, marcas personales premium, celebrities, speakers, fundadoras y creadores de contenido en trayectoria de crecimiento acelerado.</p>
+                        </div>
+                        <p class="text-[10px] text-zinc-400 uppercase tracking-widest">Precio por cotización · No se aceptan proyectos sin llamada de descubrimiento previa.</p>
+
+                        <div class="pt-4">
+                            <button onclick="switchTab('contacto')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-black hover:bg-brandGreen text-black bg-transparent">
+                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Agendar llamada de descubrimiento</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden bg-zinc-50 aspect-[4/3] order-1 lg:order-2">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200"
+                             alt="Visibilidad y Posicionamiento"
+                             class="img-hover-zoom w-full h-full object-cover grayscale"
+                             onerror="this.src='https://placehold.co/800x600/e5e5e5/000000?text=Visibilidad+y+Posicionamiento'">
+                    </div>
+                </div>
+
+                <!-- Línea final antes de pausa visual -->
+                <div class="border-t border-black/10"></div>
+            </div>
+
+            <!-- Sección "¿No sabes por dónde empezar?": Pausa visual en fondo negro sólido -->
+            <div class="bg-black text-white py-24 my-12">
+                <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+                    <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-bold">PUNTO DE ENTRADA</span>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-wide leading-tight">
+                        ¿No sabes por dónde empezar?
+                    </h2>
+                    <p class="text-sm text-zinc-300 max-w-lg mx-auto leading-relaxed font-normal">
+                        El Fashion Analysis Express es una sesión privada de 1 hora donde analizamos tu imagen actual y defines tu próximo paso.
+                    </p>
+                    <p class="text-xs text-zinc-400 uppercase tracking-widest">$99 · Online · Cupos disponibles</p>
+                    <div class="pt-6">
+                        <button onclick="switchTab('contacto')" class="px-8 py-4 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-brandGreen hover:border hover:border-brandGreen transition-all duration-300">
+                            RESERVAR SESIÓN
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Final: Regresa a fondo blanco con línea superior negra -->
+            <div class="max-w-7xl mx-auto px-6 md:px-12 py-20 border-t border-black">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold tracking-wide">¿Lista para trabajar juntas?</h3>
+                        <p class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Cuéntame dónde estás y qué necesitas. En 24 horas te digo si puedo ayudarte y cómo.</p>
+                    </div>
+                    <button onclick="switchTab('contacto')" class="group relative px-8 py-4 border border-black overflow-hidden transition-all duration-300 hover:text-white bg-transparent">
+                        <span class="relative z-10 text-xs uppercase tracking-widest font-bold">AGENDAR LLAMADA DE DIAGNÓSTICO</span>
+                        <div class="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- ============================================== -->
+        <section id="view-thefake" class="tab-view hidden opacity-0 transition-opacity duration-500">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-32">
+                <!-- AI Strategy Session como primer contenido visible -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-semibold">DIVA LOMAS PRESENTA</span>
+                    <h1 class="text-5xl md:text-6xl font-bold tracking-tight">The Fake Studio</h1>
+                    <p class="text-sm text-zinc-500 font-normal italic">
+                        AI Strategy Session — el servicio principal de esta sección.
+                    </p>
+                </div>
+
+                <!-- Protagonista único block logic -->
+                <div class="border-t border-black pt-16 space-y-12">
+                    <!-- Imagen grande arriba -->
+                    <div class="w-full bg-zinc-100 aspect-[21/9] overflow-hidden">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1920" 
+                             alt="AI Strategy Session Visual Concept" 
+                             class="img-hover-zoom w-full h-full object-cover grayscale contrast-110"
+                             onerror="this.src='https://placehold.co/1200x500/e5e5e5/000000?text=AI+Strategy+Session'">
+                    </div>
+
+                    <!-- Copy debajo y botón "RESERVAR AHORA" en verde sólido -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                        <div class="lg:col-span-8 space-y-6">
+                            <span class="text-[10px] text-brandGreen font-bold tracking-[0.3em] uppercase block">1:1 AI STRATEGY SESSION</span>
+                            <h2 class="text-4xl font-bold leading-tight">1:1 AI Strategy Session</h2>
+                            <div class="border border-dashed border-zinc-300 bg-zinc-50 p-5 text-xs text-zinc-500 leading-relaxed font-normal">
+                                <strong class="text-black">Copy pendiente por integrar:</strong> según la instrucción del documento anexo, este bloque debe usar el texto exacto del servicio "1:1 AI Strategy Session" ya activo en el backend de Wix, sin reescribirlo. Pega aquí esa descripción tal cual antes de publicar.
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 lg:border-l lg:border-black/10 lg:pl-10 space-y-6">
+                            <h4 class="text-xs uppercase tracking-widest font-semibold text-zinc-400">Detalles del Encuentro</h4>
+                            <ul class="text-xs space-y-3 font-normal">
+                                <li class="flex justify-between border-b border-black/10 pb-2">
+                                    <span>Duración</span>
+                                    <span class="font-medium text-zinc-400">[confirmar con Wix]</span>
+                                </li>
+                                <li class="flex justify-between border-b border-black/10 pb-2">
+                                    <span>Precio</span>
+                                    <span class="font-medium text-zinc-400">[confirmar con Wix]</span>
+                                </li>
+                                <li class="flex justify-between border-b border-black/10 pb-2">
+                                    <span>Modalidad</span>
+                                    <span class="font-medium text-zinc-400">[confirmar con Wix]</span>
+                                </li>
+                            </ul>
+                            <div class="pt-4">
+                                <button onclick="switchTab('contacto')" class="w-full py-4 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-brandGreen hover:border hover:border-brandGreen transition-all duration-300 block text-center shadow-md">
+                                    RESERVAR AHORA
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- ============================================== -->
+        <section id="view-portafolio" class="tab-view hidden opacity-0 transition-opacity duration-500">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-32">
+                <div class="mb-16">
+                    <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-semibold">CASOS DE ESTUDIO</span>
+                    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mt-2">Nuestros Trabajos</h1>
+                    <div class="h-[1px] w-24 bg-black mt-6 mb-8"></div>
+                </div>
+
+                <!-- Bento editorial: tamaños asimétricos, blanco y negro que revela color al hover, número de caso y CTA a "Ver caso completo" -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[260px] gap-5 md:gap-6 [grid-auto-flow:dense]">
+
+                    <!-- Proyecto 1 -->
+                    <button onclick="openCase(0)" aria-label="Ver caso: Morfologías Minimalistas" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-2 lg:row-span-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200"
+                             alt="Proyecto Editorial Siguiente Nivel"
+                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
+                             onerror="this.src='https://placehold.co/900x1100/1a1a1a/ffffff?text=Proyecto+1'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
+                        <span class="absolute top-5 left-5 text-[10px] font-bold text-white/70 tracking-[0.3em]">01</span>
+                        <span class="absolute top-5 right-5 w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                            <span class="text-[10px] uppercase tracking-widest text-brandGreen font-bold block mb-2">Editorial Moda</span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight">Morfologías Minimalistas</h3>
+                            <p class="text-[10px] uppercase tracking-widest text-white/70 font-normal mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Ver caso completo &rarr;</p>
+                        </div>
+                    </button>
+
+                    <!-- Proyecto 2 -->
+                    <button onclick="openCase(1)" aria-label="Ver caso: Dirección de Identidad" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-1 lg:row-span-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&q=80&w=800"
+                             alt="Curaduría de Imagen Corporativa"
+                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
+                             onerror="this.src='https://placehold.co/600x800/1a1a1a/ffffff?text=Proyecto+2'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
+                        <span class="absolute top-4 left-4 text-[10px] font-bold text-white/70 tracking-[0.3em]">02</span>
+                        <span class="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-5">
+                            <span class="text-[9px] uppercase tracking-widest text-brandGreen font-bold block mb-1">Styling Ejecutivo</span>
+                            <h3 class="text-lg font-bold text-white leading-tight">Dirección de Identidad</h3>
+                        </div>
+                    </button>
+
+                    <!-- Proyecto 3 -->
+                    <button onclick="openCase(2)" aria-label="Ver caso: Simetría Urbana" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-1 lg:row-span-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&q=80&w=800"
+                             alt="Campañas Visuales"
+                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
+                             onerror="this.src='https://placehold.co/600x800/1a1a1a/ffffff?text=Proyecto+3'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
+                        <span class="absolute top-4 left-4 text-[10px] font-bold text-white/70 tracking-[0.3em]">03</span>
+                        <span class="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-5">
+                            <span class="text-[9px] uppercase tracking-widest text-brandGreen font-bold block mb-1">Campaña Visual</span>
+                            <h3 class="text-lg font-bold text-white leading-tight">Simetría Urbana</h3>
+                        </div>
+                    </button>
+
+                    <!-- Proyecto 4 -->
+                    <button onclick="openCase(3)" aria-label="Ver caso: Análisis Retrato" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-1 lg:row-span-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=800"
+                             alt="Portafolio Editorial"
+                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
+                             onerror="this.src='https://placehold.co/600x1100/1a1a1a/ffffff?text=Proyecto+4'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
+                        <span class="absolute top-5 left-5 text-[10px] font-bold text-white/70 tracking-[0.3em]">04</span>
+                        <span class="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <span class="text-[10px] uppercase tracking-widest text-brandGreen font-bold block mb-1">Rediseño Personal</span>
+                            <h3 class="text-xl font-bold text-white leading-tight">Análisis Retrato</h3>
+                            <p class="text-[10px] uppercase tracking-widest text-white/70 font-normal mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Ver caso completo &rarr;</p>
+                        </div>
+                    </button>
+
+                    <!-- Proyecto 5 -->
+                    <button onclick="openCase(4)" aria-label="Ver caso: Siluetas Esculturales" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-2 lg:row-span-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&q=80&w=1200"
+                             alt="Colección y Vestidor"
+                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
+                             onerror="this.src='https://placehold.co/900x600/1a1a1a/ffffff?text=Proyecto+5'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
+                        <span class="absolute top-5 left-5 text-[10px] font-bold text-white/70 tracking-[0.3em]">05</span>
+                        <span class="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <span class="text-[10px] uppercase tracking-widest text-brandGreen font-bold block mb-1">Atelier Privé</span>
+                            <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Siluetas Esculturales</h3>
+                            <p class="text-[10px] uppercase tracking-widest text-white/70 font-normal mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Ver caso completo &rarr;</p>
+                        </div>
+                    </button>
+
+                    <!-- Proyecto 6 -->
+                    <button onclick="openCase(5)" aria-label="Ver caso: Paleta Monocroma" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-1 lg:row-span-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800"
+                             alt="Styling Arte"
+                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
+                             onerror="this.src='https://placehold.co/600x800/1a1a1a/ffffff?text=Proyecto+6'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
+                        <span class="absolute top-4 left-4 text-[10px] font-bold text-white/70 tracking-[0.3em]">06</span>
+                        <span class="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                        </span>
+                        <div class="absolute bottom-0 left-0 right-0 p-5">
+                            <span class="text-[9px] uppercase tracking-widest text-brandGreen font-bold block mb-1">Dirección de Estilo</span>
+                            <h3 class="text-lg font-bold text-white leading-tight">Paleta Monocroma</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- ============================================== -->
+        <section id="view-sobremi" class="tab-view hidden opacity-0 transition-opacity duration-500">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-32">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                    
+                    <!-- Retrato editorial -->
+                    <div class="lg:col-span-6 overflow-hidden bg-zinc-100 aspect-[4/5] max-w-lg mx-auto lg:mx-0 w-full">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1200" 
+                             alt="Retrato de la Consultora de Imagen" 
+                             class="img-hover-zoom w-full h-full object-cover grayscale contrast-110"
+                             onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Retrato+Sobre+Mi'">
+                    </div>
+
+                    <!-- Columna angosta de texto & credenciales simples -->
+                    <div class="lg:col-span-6 space-y-10 lg:pl-10">
+                        <div class="space-y-4">
+                            <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-semibold block">FUNDADORA & IMAGE MAKER</span>
+                            <h1 class="text-5xl md:text-6xl font-bold tracking-tight">Diva Lomas</h1>
+                            <p class="text-sm italic font-normal text-zinc-400">18 años en Relaciones Públicas · 6 años como Image Maker</p>
+                            <div class="h-[1px] w-16 bg-black mt-4"></div>
+                        </div>
+
+                        <div class="space-y-6 text-sm text-zinc-600 leading-relaxed font-normal">
+                            <p>
+                                18 años diseñando la imagen de quienes no pueden darse el lujo de pasar desapercibidos. Trabajo con mujeres y marcas que entienden que la imagen no es estética — es estrategia.
+                            </p>
+                            <p>
+                                Cada proyecto comienza con una conversación. Lo que sigue depende de dónde estás y adónde vas.
+                            </p>
+                        </div>
+
+                        <!-- Credenciales listadas como texto simple sin insignias ni iconos -->
+                        <div class="space-y-4 border-t border-black/10 pt-8">
+                            <h4 class="text-xs uppercase tracking-widest font-bold text-black">Trayectoria</h4>
+                            <div class="space-y-4 text-xs tracking-wider uppercase font-normal text-zinc-600">
+                                <div>
+                                    <p class="font-medium text-black">Relaciones Públicas</p>
+                                    <p class="text-zinc-400 mt-1">18 años de trayectoria</p>
+                                </div>
+                                <div class="h-[1px] w-full bg-black/5"></div>
+                                <div>
+                                    <p class="font-medium text-black">Image Maker</p>
+                                    <p class="text-zinc-400 mt-1">6 años · Styling, dirección creativa y conexión</p>
+                                </div>
+                                <div class="h-[1px] w-full bg-black/5"></div>
+                                <div>
+                                    <p class="font-medium text-black">Colaboraciones con talento y marca</p>
+                                    <p class="text-zinc-400 mt-1">Roselyn Sánchez · Eric Winter · Angélica Vale · Manelyk González</p>
+                                </div>
+                                <div class="h-[1px] w-full bg-black/5"></div>
+                                <div>
+                                    <p class="font-medium text-black">Marcas</p>
+                                    <p class="text-zinc-400 mt-1">Zimmermann · Dolce & Gabbana · Simkhai · Alice and Olivia · Alexis Bittar</p>
+                                </div>
+                                <div class="h-[1px] w-full bg-black/5"></div>
+                                <div>
+                                    <p class="font-medium text-black">Como se ha visto en</p>
+                                    <p class="text-zinc-400 mt-1">Marie Claire · People en Español · Vanity Fair France · Vogue México</p>
+                                </div>
+                            </div>
+                            <p class="text-[10px] text-zinc-400 normal-case italic pt-2">Nota interna: agregar aquí formación formal o certificaciones específicas si Diva desea incluirlas — no se inventó ninguna credencial académica.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- ============================================== -->
+        <section id="view-contacto" class="tab-view hidden opacity-0 transition-opacity duration-500">
+            <div class="max-w-4xl mx-auto px-6 py-20 md:py-32">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-semibold">CONTACTO</span>
+                    <h1 class="text-5xl md:text-6xl font-bold tracking-tight">¿Lista para trabajar juntas?</h1>
+                    <div class="h-[1px] w-24 bg-black mx-auto mt-6"></div>
+                    <p class="text-xs text-zinc-400 uppercase tracking-widest leading-relaxed mt-4 max-w-md mx-auto">
+                        Cuéntame dónde estás y qué necesitas. En 24 horas te digo si puedo ayudarte y cómo.
+                    </p>
+                </div>
+
+                <!-- Formulario minimalista con líneas en vez de cajas con borde -->
+                <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <!-- Nombre -->
+                        <div class="relative z-0 w-full group">
+                            <input type="text" name="name" id="name" required
+                                   class="block py-3 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-black/20 appearance-none focus:outline-none focus:ring-0 focus:border-brandGreen transition-all peer" placeholder=" " />
+                            <label for="name" class="peer-focus:font-medium absolute text-xs uppercase tracking-widest text-zinc-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brandGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                Nombre Completo
+                            </label>
+                        </div>
+                        <!-- Email -->
+                        <div class="relative z-0 w-full group">
+                            <input type="email" name="email" id="email" required
+                                   class="block py-3 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-black/20 appearance-none focus:outline-none focus:ring-0 focus:border-brandGreen transition-all peer" placeholder=" " />
+                            <label for="email" class="peer-focus:font-medium absolute text-xs uppercase tracking-widest text-zinc-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brandGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                Correo Electrónico
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <!-- Servicio Seleccionado -->
+                        <div class="relative z-0 w-full group">
+                            <select name="service" id="service" required
+                                    class="block py-3 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-black/20 appearance-none focus:outline-none focus:ring-0 focus:border-brandGreen transition-all peer">
+                                <option value="" disabled selected class="text-zinc-300">Seleccionar Opción</option>
+                                <option value="fashion-analysis-express" class="text-black">Fashion Analysis Express ($99)</option>
+                                <option value="diagnostico-imagen" class="text-black">Diagnóstico de Imagen (Fashion / Color / Digital Styling)</option>
+                                <option value="estrategia-guardarropa" class="text-black">Estrategia de Guardarropa</option>
+                                <option value="image-design-project" class="text-black">Image Design Project (Lista de espera)</option>
+                                <option value="visibilidad-posicionamiento" class="text-black">Visibilidad & Posicionamiento</option>
+                                <option value="ai-strategy" class="text-black">The Fake Studio: AI Strategy Session</option>
+                            </select>
+                            <label for="service" class="peer-focus:font-medium absolute text-xs uppercase tracking-widest text-zinc-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brandGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                Servicio de Interés
+                            </label>
+                        </div>
+                        <!-- Presupuesto / Enfoque -->
+                        <div class="relative z-0 w-full group">
+                            <input type="text" name="interest" id="interest" 
+                                   class="block py-3 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-black/20 appearance-none focus:outline-none focus:ring-0 focus:border-brandGreen transition-all peer" placeholder=" " />
+                            <label for="interest" class="peer-focus:font-medium absolute text-xs uppercase tracking-widest text-zinc-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brandGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                Enfoque, Objetivo o Plazos
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Mensaje / Detalles adicionales -->
+                    <div class="relative z-0 w-full group">
+                        <textarea name="message" id="message" rows="4" required
+                                  class="block py-3 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-black/20 appearance-none focus:outline-none focus:ring-0 focus:border-brandGreen transition-all peer" placeholder=" "></textarea>
+                        <label for="message" class="peer-focus:font-medium absolute text-xs uppercase tracking-widest text-zinc-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brandGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Detalles específicos de su solicitud...
+                        </label>
+                    </div>
+
+                    <!-- Botón de envío en verde -->
+                    <div class="flex justify-end pt-4">
+                        <button type="submit" class="w-full md:w-auto px-10 py-4 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-brandGreen hover:border hover:border-brandGreen transition-all duration-300 shadow-md">
+                            ENVIAR SOLICITUD
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Feedback modal/notification simulation -->
+                <div id="form-success-alert" class="hidden mt-8 p-4 bg-zinc-50 border border-brandGreen text-zinc-800 text-sm text-center font-normal uppercase tracking-widest">
+                    <span class="text-brandGreen font-bold mr-2">✓</span> Solicitud enviada con éxito. Nos comunicaremos en 24 horas hábiles.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer: Fondo negro sólido, texto blanco, íconos de redes que se iluminan en verde al hover -->
+    <footer class="bg-black text-white py-12 mt-20 border-t border-black/10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <!-- Izquierda: Copyright simple -->
+            <div class="text-[10px] tracking-widest uppercase font-normal text-zinc-500 text-center md:text-left">
+                &copy; 2026 DIVA LOMAS INC. TODOS LOS DERECHOS RESERVADOS.
+            </div>
+
+            <!-- Centro: Redes Sociales -->
+            <div class="flex items-center space-x-8 justify-center">
+                <a href="#" class="tap-target flex items-center justify-center text-zinc-500 hover:text-brandGreen transition-all duration-300 transform hover:scale-110" aria-label="Instagram">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
+                <a href="#" class="tap-target flex items-center justify-center text-zinc-500 hover:text-brandGreen transition-all duration-300 transform hover:scale-110" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in text-lg"></i>
+                </a>
+                <a href="#" class="tap-target flex items-center justify-center text-zinc-500 hover:text-brandGreen transition-all duration-300 transform hover:scale-110" aria-label="Pinterest">
+                    <i class="fab fa-pinterest-p text-lg"></i>
+                </a>
+            </div>
+
+            <!-- Derecha: Dirección/Contacto simple -->
+            <div class="text-[10px] tracking-widest uppercase font-normal text-zinc-500 text-center md:text-right">
+                LOS ANGELES, CA
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating discreet CTA: aparece tras hacer scroll, refuerzo profesional sin ser invasivo -->
+    <button id="float-cta" onclick="switchTab('contacto')"
+            class="fixed z-40 bg-black text-white text-[10px] uppercase tracking-widest font-semibold px-5 py-3.5 shadow-lg hover:bg-brandGreen transition-colors duration-300 tap-target"
+            style="bottom: max(1.5rem, calc(var(--safe-bottom) + 0.75rem)); right: max(1.5rem, var(--safe-right));"
+            aria-label="Agendar llamada de diagnóstico">
+        Agendar llamada →
+    </button>
+
+    <!-- ============================================== -->
+    <!-- POPUP DE ENTRADA — captura de contacto editorial -->
+    <!-- Aparece una vez por sesión, tras scroll o unos segundos en el sitio. -->
+    <!-- ============================================== -->
+    <div id="entry-popup" class="hidden-popup fixed inset-0 z-[70] bg-black/70 backdrop-blur-sm flex items-center justify-center p-5 md:p-6" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+        <div class="popup-panel relative bg-white w-full max-w-lg border border-black shadow-2xl">
+            <!-- Botón cerrar -->
+            <button onclick="closeEntryPopup()" aria-label="Cerrar ventana"
+                    class="tap-target absolute top-2 right-2 flex items-center justify-center text-black hover:text-brandGreen transition-colors duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+
+            <!-- Franja superior verde: acento editorial -->
+            <div class="h-1 w-full bg-brandGreen"></div>
+
+            <div class="p-8 md:p-12">
+                <span class="text-[10px] text-brandGreen uppercase tracking-[0.35em] font-bold block mb-4">Antes de irte</span>
+                <h2 id="popup-title" class="text-2xl md:text-3xl font-bold tracking-tight leading-tight mb-4">
+                    ¿Sabes qué está diciendo tu imagen ahora mismo?
+                </h2>
+                <p class="text-sm text-zinc-600 font-normal leading-relaxed mb-8">
+                    El Fashion Analysis Express es una sesión privada de 1 hora, 1:1 vía Zoom, donde defines exactamente tu próximo paso. $99 · Cupos disponibles.
+                </p>
+
+                <!-- Estado 1: Formulario -->
+                <form id="popup-form" onsubmit="handlePopupSubmit(event)" class="space-y-5">
+                    <div class="relative z-0 w-full group">
+                        <input type="email" name="popup-email" id="popup-email" required placeholder=" "
+                               class="block py-3 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-black/20 appearance-none focus:outline-none focus:ring-0 focus:border-brandGreen transition-all peer" />
+                        <label for="popup-email" class="peer-focus:font-bold absolute text-xs uppercase tracking-widest text-zinc-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brandGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Correo Electrónico
+                        </label>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-black text-white text-xs uppercase tracking-widest font-bold hover:bg-brandGreen transition-colors duration-300">
+                        Quiero mi sesión →
+                    </button>
+                    <button type="button" onclick="closeEntryPopup()" class="w-full text-center text-[10px] text-zinc-400 uppercase tracking-widest font-normal hover:text-black transition-colors duration-300 pt-1">
+                        No, gracias — seguir navegando
+                    </button>
+                </form>
+
+                <!-- Estado 2: Confirmación (oculto por defecto) -->
+                <div id="popup-success" class="hidden text-center py-4">
+                    <span class="text-brandGreen text-3xl block mb-3">✓</span>
+                    <p class="text-sm font-bold uppercase tracking-widest mb-2">Gracias.</p>
+                    <p class="text-xs text-zinc-500 font-normal leading-relaxed">Te escribiremos en menos de 24 horas para confirmar tu sesión.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- MODAL DE CASO DE ESTUDIO — Portafolio -->
+    <!-- Se abre al dar click en cualquier proyecto del bento grid -->
+    <!-- ============================================== -->
+    <div id="case-modal" class="hidden-case fixed inset-0 z-[80] bg-black flex items-stretch justify-center" role="dialog" aria-modal="true" aria-labelledby="case-title">
+        <div class="relative w-full h-full overflow-y-auto">
+
+            <!-- Barra superior fija: cerrar + índice -->
+            <div class="sticky top-0 z-10 flex items-center justify-between px-6 md:px-10 py-5 bg-black/80 backdrop-blur-md border-b border-white/10">
+                <span id="case-index" class="text-[10px] uppercase tracking-[0.3em] text-white/60 font-bold">01 / 06</span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-brandGreen font-bold hidden sm:block">DIVA LOMAS · CASO DE ESTUDIO</span>
+                <button onclick="closeCase()" aria-label="Cerrar caso de estudio" class="tap-target flex items-center justify-center text-white hover:text-brandGreen transition-colors duration-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100%-73px)]">
+                <!-- Imagen protagonista -->
+                <div class="relative bg-zinc-900 h-[45vh] lg:h-auto">
+                    <img id="case-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover">
+                </div>
+
+                <!-- Contenido editorial -->
+                <div class="bg-white px-6 md:px-14 py-12 md:py-16 flex flex-col justify-center">
+                    <span id="case-category" class="text-[10px] text-brandGreen uppercase tracking-[0.35em] font-bold block mb-4"></span>
+                    <h2 id="case-title" class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6"></h2>
+                    <p id="case-tagline" class="text-sm md:text-base text-zinc-500 italic font-normal mb-8"></p>
+
+                    <div class="space-y-6 mb-8">
+                        <div>
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-black mb-2">El reto</h4>
+                            <p id="case-challenge" class="text-sm text-zinc-600 font-normal leading-relaxed"></p>
+                        </div>
+                        <div>
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-black mb-2">El enfoque</h4>
+                            <p id="case-approach" class="text-sm text-zinc-600 font-normal leading-relaxed"></p>
+                        </div>
+                    </div>
+
+                    <blockquote class="border-l-4 border-brandGreen pl-5 py-1 mb-10">
+                        <p id="case-quote" class="text-base md:text-lg font-bold italic leading-snug"></p>
+                    </blockquote>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="switchTab('contacto'); closeCase();" class="group relative px-8 py-4 bg-black text-white text-xs uppercase tracking-widest font-bold hover:bg-brandGreen transition-colors duration-300 text-center">
+                            Quiero un proyecto así →
+                        </button>
+                        <button onclick="switchTab('servicios'); closeCase();" class="px-8 py-4 border border-black text-black text-xs uppercase tracking-widest font-bold hover:border-brandGreen hover:text-brandGreen transition-colors duration-300 text-center">
+                            Ver servicios
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navegación anterior / siguiente -->
+            <button onclick="navigateCase(-1)" aria-label="Caso anterior"
+                    class="hidden md:flex fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 hover:bg-brandGreen border border-white/20 items-center justify-center text-white transition-colors duration-300 z-10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button onclick="navigateCase(1)" aria-label="Caso siguiente"
+                    class="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 hover:bg-brandGreen border border-white/20 items-center justify-center text-white transition-colors duration-300 z-10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+
+            <!-- Navegación móvil (abajo) -->
+            <div class="md:hidden flex items-center justify-between px-6 py-6 border-t border-black/10" style="padding-bottom: max(1.5rem, calc(var(--safe-bottom) + 1rem));">
+                <button onclick="navigateCase(-1)" aria-label="Caso anterior" class="tap-target text-xs uppercase tracking-widest font-bold flex items-center gap-2">&larr; Anterior</button>
+                <button onclick="navigateCase(1)" aria-label="Caso siguiente" class="tap-target text-xs uppercase tracking-widest font-bold flex items-center gap-2">Siguiente &rarr;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // Portafolio: datos de casos de estudio
+        // ============================================
+        const PROJECTS = [
+            {
+                category: 'Editorial Moda',
+                title: 'Morfologías Minimalistas',
+                tagline: 'Una dirección de imagen construida para durar más que la tendencia.',
+                image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1600',
+                challenge: 'Una figura pública con presencia sólida en medios necesitaba una imagen que se sintiera coherente frente a cámara, en prensa y en su día a día — sin perder personalidad ni caer en un molde genérico.',
+                approach: 'Trabajamos silueta, paleta de color y guardarropa como un sistema único: cada pieza responde a una lógica de proporción y contraste, pensada para funcionar tanto en editorial como en el uso real.',
+                quote: '"Por primera vez sentí que mi imagen hablaba por mí antes de decir una palabra."'
+            },
+            {
+                category: 'Styling Ejecutivo',
+                title: 'Dirección de Identidad',
+                tagline: 'Presencia ejecutiva sin sacrificar personalidad.',
+                image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&q=80&w=1600',
+                challenge: 'Una fundadora en ronda de inversión necesitaba proyectar autoridad frente a inversionistas sin perder la calidez que la distingue con su equipo y su comunidad.',
+                approach: 'Diseñamos un guardarropa ejecutivo modular: piezas que se combinan entre sí para cubrir juntas, pitches y contenido de marca personal, todo dentro de una paleta de tres tonos.',
+                quote: '"Dejé de pensar en qué ponerme y empecé a pensar en lo que quería decir."'
+            },
+            {
+                category: 'Campaña Visual',
+                title: 'Simetría Urbana',
+                tagline: 'Una campaña de temporada construida sobre líneas limpias y contraste.',
+                image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&q=80&w=1600',
+                challenge: 'Una marca emergente necesitaba una campaña visual que comunicara su identidad sin recurrir a los códigos visuales ya saturados de su categoría.',
+                approach: 'Definimos una dirección de arte basada en simetría, texturas urbanas y una paleta reducida a blanco, negro y un acento de color — coherente con la identidad de marca en cada plataforma.',
+                quote: '"La campaña se sintió inmediatamente reconocible como nuestra."'
+            },
+            {
+                category: 'Rediseño Personal',
+                title: 'Análisis Retrato',
+                tagline: 'Un diagnóstico profundo como punto de partida para una transformación real.',
+                image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=1600',
+                challenge: 'Una profesional en transición de carrera necesitaba entender qué comunicaba su imagen actual y qué necesitaba cambiar para alinearla con su próximo capítulo.',
+                approach: 'Partimos de un Fashion Analysis completo: silueta, colorimetría y presencia digital, para construir un Image Book con lineamientos claros y aplicables desde el primer día.',
+                quote: '"Fue la primera vez que alguien me explicó el por qué detrás de cada elección."'
+            },
+            {
+                category: 'Atelier Privé',
+                title: 'Siluetas Esculturales',
+                tagline: 'Guardarropa como arquitectura: cada pieza con una función definida.',
+                image: 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&q=80&w=1600',
+                challenge: 'Un clóset con inversión considerable pero sin cohesión: piezas de alto nivel que no conversaban entre sí ni con la vida real de la clienta.',
+                approach: 'Auditamos, editamos y reorganizamos el guardarropa completo, identificando vacíos estratégicos y construyendo looks reales con lo que ya existía antes de sumar una sola prenda nueva.',
+                quote: '"Redescubrí piezas que ya tenía y que nunca supe cómo usar."'
+            },
+            {
+                category: 'Dirección de Estilo',
+                title: 'Paleta Monocroma',
+                tagline: 'Una identidad visual construida alrededor de un solo gesto de color.',
+                image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1600',
+                challenge: 'Un creador de contenido en crecimiento acelerado necesitaba una identidad visual reconocible antes de escalar su presencia a nuevas plataformas y marcas.',
+                approach: 'Construimos un sistema de imagen monocromático con un único acento de color como firma visual, aplicado a guardarropa, sets y dirección de contenido.',
+                quote: '"Ahora la gente reconoce mi contenido antes de ver mi nombre."'
+            }
+        ];
+
+        let currentCaseIndex = 0;
+        const caseModal = document.getElementById('case-modal');
+
+        function renderCase(index) {
+            const p = PROJECTS[index];
+            document.getElementById('case-category').textContent = p.category;
+            document.getElementById('case-title').textContent = p.title;
+            document.getElementById('case-tagline').textContent = p.tagline;
+            document.getElementById('case-challenge').textContent = p.challenge;
+            document.getElementById('case-approach').textContent = p.approach;
+            document.getElementById('case-quote').textContent = p.quote;
+            const img = document.getElementById('case-image');
+            img.src = p.image;
+            img.alt = p.title;
+            document.getElementById('case-index').textContent =
+                String(index + 1).padStart(2, '0') + ' / ' + String(PROJECTS.length).padStart(2, '0');
+
+            // Reinicia la animación de entrada del contenido
+            const contentCol = caseModal.querySelector('.bg-white');
+            contentCol.classList.remove('case-fade');
+            void contentCol.offsetWidth; // reflow forzado
+            contentCol.classList.add('case-fade');
+        }
+
+        function openCase(index) {
+            currentCaseIndex = index;
+            renderCase(currentCaseIndex);
+            caseModal.classList.remove('hidden-case');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCase() {
+            caseModal.classList.add('hidden-case');
+            document.body.style.overflow = '';
+        }
+
+        function navigateCase(direction) {
+            currentCaseIndex = (currentCaseIndex + direction + PROJECTS.length) % PROJECTS.length;
+            renderCase(currentCaseIndex);
+        }
+
+        // Cerrar con Escape, navegar con flechas del teclado
+        document.addEventListener('keydown', function(e) {
+            if (caseModal.classList.contains('hidden-case')) return;
+            if (e.key === 'Escape') closeCase();
+            if (e.key === 'ArrowRight') navigateCase(1);
+            if (e.key === 'ArrowLeft') navigateCase(-1);
+        });
+
+        // Tab system variables
+        const navItems = document.querySelectorAll('.nav-item');
+        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+        const views = document.querySelectorAll('.tab-view');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconPath = document.getElementById('menu-icon-path');
+
+        // Function to handle switching tabs
+        function switchTab(tabId) {
+            // Hide all tab views and clear navigation styling
+            views.forEach(view => {
+                view.classList.add('hidden');
+                view.classList.remove('opacity-100');
+                view.classList.add('opacity-0');
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('text-black', 'border-brandGreen');
+                item.classList.add('text-zinc-400', 'border-transparent');
+                item.removeAttribute('aria-current');
+            });
+
+            mobileNavItems.forEach(item => {
+                item.classList.remove('text-brandGreen', 'font-semibold');
+                item.classList.add('text-zinc-600');
+            });
+
+            // Target Active tab
+            const activeView = document.getElementById(`view-${tabId}`);
+            if (activeView) {
+                activeView.classList.remove('hidden');
+                // Allow a tiny delay for CSS opacity transition to work smoothly
+                setTimeout(() => {
+                    activeView.classList.remove('opacity-0');
+                    activeView.classList.add('opacity-100');
+                }, 10);
+            }
+
+            // Style Active Desktop Nav Link (active underline in brand green)
+            const activeDesktopNav = document.getElementById(`nav-${tabId}`);
+            if (activeDesktopNav) {
+                activeDesktopNav.classList.remove('text-zinc-400', 'border-transparent');
+                activeDesktopNav.classList.add('text-black', 'border-brandGreen');
+                activeDesktopNav.setAttribute('aria-current', 'page');
+            }
+
+            // Ocultar el CTA flotante mientras se está en la propia página de contacto
+            const floatCta = document.getElementById('float-cta');
+            if (floatCta) {
+                floatCta.style.display = (tabId === 'contacto') ? 'none' : 'block';
+            }
+
+            // Si el usuario navega a Contacto, cerrar el popup de entrada si estuviera abierto
+            if (tabId === 'contacto') {
+                const popupEl = document.getElementById('entry-popup');
+                if (popupEl && !popupEl.classList.contains('hidden-popup')) {
+                    closeEntryPopup();
+                }
+            }
+
+            // Close mobile menu if open
+            if (!mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu();
+            }
+
+            // Smooth scroll to top when changing tab
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Toggle Mobile Menu Drawer
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                menuIconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                menuIconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            }
+            if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+        }
+
+        // Cerrar menú móvil con Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu();
+            }
+        });
+
+        // ============================================
+        // Popup de entrada: se muestra una vez por sesión
+        // ============================================
+        const entryPopup = document.getElementById('entry-popup');
+        let popupShown = sessionStorage.getItem('divaLomasPopupShown') === 'true';
+        let popupTimer = null;
+
+        function openEntryPopup() {
+            if (popupShown) return;
+            // No mostrar si el usuario ya está en el formulario de contacto
+            const contactoView = document.getElementById('view-contacto');
+            if (contactoView && !contactoView.classList.contains('hidden')) return;
+
+            entryPopup.classList.remove('hidden-popup');
+            popupShown = true;
+            sessionStorage.setItem('divaLomasPopupShown', 'true');
+            document.body.style.overflow = 'hidden';
+            const emailInput = document.getElementById('popup-email');
+            if (emailInput) setTimeout(() => emailInput.focus(), 350);
+        }
+
+        function closeEntryPopup() {
+            entryPopup.classList.add('hidden-popup');
+            document.body.style.overflow = '';
+        }
+
+        function handlePopupSubmit(event) {
+            event.preventDefault();
+            document.getElementById('popup-form').classList.add('hidden');
+            document.getElementById('popup-success').classList.remove('hidden');
+            setTimeout(closeEntryPopup, 2600);
+        }
+
+        // Cerrar con click en el fondo oscuro
+        entryPopup.addEventListener('click', function(e) {
+            if (e.target === entryPopup) closeEntryPopup();
+        });
+
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !entryPopup.classList.contains('hidden-popup')) {
+                closeEntryPopup();
+            }
+        });
+
+        // Disparo por tiempo (18s) y por profundidad de scroll (40%), lo que ocurra primero
+        popupTimer = setTimeout(openEntryPopup, 18000);
+        window.addEventListener('scroll', function() {
+            const scrolledPct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            if (scrolledPct > 40 && !popupShown) {
+                clearTimeout(popupTimer);
+                openEntryPopup();
+            }
+        });
+
+        // Contact Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('form-success-alert');
+            alertBox.classList.remove('hidden');
+            
+            // Clean fields
+            document.getElementById('contact-form').reset();
+
+            // Auto hide message after 6 seconds
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Initialize state (Set Home view as Active)
+        window.onload = function() {
+            switchTab('home');
+
+            // Scroll action to change header opacity & styling
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('main-header');
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-white', 'shadow-sm', 'border-black/15');
+                    header.classList.remove('bg-white/90');
+                } else {
+                    header.classList.add('bg-white/90');
+                    header.classList.remove('shadow-sm', 'border-black/15');
+                }
+
+                // Mostrar el CTA flotante solo después de bajar un poco (no en el primer impacto del hero)
+                const floatCta = document.getElementById('float-cta');
+                if (floatCta && floatCta.style.display !== 'none') {
+                    if (window.scrollY > 600) {
+                        floatCta.classList.add('visible');
+                    } else {
+                        floatCta.classList.remove('visible');
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>
