@@ -193,22 +193,15 @@
             transform: scale(0.96) translateY(8px);
             opacity: 0;
         }
-        /* Modal de caso de estudio (portafolio) */
-        #case-modal {
+        /* Lightbox de galería (portafolio) */
+        #lightbox {
             transition: opacity 0.45s ease;
             opacity: 1;
         }
-        #case-modal.hidden-case {
+        #lightbox.hidden-case {
             opacity: 0;
             pointer-events: none;
             visibility: hidden;
-        }
-        #case-modal .case-fade {
-            animation: caseFadeIn 0.5s ease both;
-        }
-        @keyframes caseFadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         /* Floating discreet CTA */
         #float-cta {
@@ -342,7 +335,64 @@
                 </div>
             </div>
 
-            <!-- Editorial Feature Section with generous spacing -->
+            <!-- Declaración de posicionamiento (contenido real del sitio en vivo) -->
+            <div class="max-w-4xl mx-auto px-6 md:px-12 py-24 text-center space-y-6">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+                    STYLING + DIRECCIÓN CREATIVA + CONEXIÓN
+                </h2>
+                <p class="text-sm text-zinc-600 leading-relaxed font-normal max-w-2xl mx-auto">
+                    Para líderes, emprendedores y figuras públicas que saben que la imagen no es un lujo, sino una herramienta estratégica.
+                </p>
+                <div class="pt-2">
+                    <button onclick="switchTab('servicios')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-white bg-transparent">
+                        <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Ir a Servicios</span>
+                        <div class="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mi trabajo con celebridades y alianzas con marcas de lujo (contenido real del sitio en vivo) -->
+            <div class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                    <div class="lg:col-span-7 grid grid-cols-3 gap-3">
+                        <div class="overflow-hidden bg-zinc-100 aspect-[3/4] col-span-1">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=600"
+                                 alt="Mi trabajo con celebridades — look 1"
+                                 class="img-hover-zoom w-full h-full object-cover grayscale"
+                                 onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Trabajo+1'">
+                        </div>
+                        <div class="overflow-hidden bg-zinc-100 aspect-[3/4] col-span-1 translate-y-8">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=600"
+                                 alt="Mi trabajo con celebridades — look 2"
+                                 class="img-hover-zoom w-full h-full object-cover grayscale"
+                                 onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Trabajo+2'">
+                        </div>
+                        <div class="overflow-hidden bg-zinc-100 aspect-[3/4] col-span-1">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=600"
+                                 alt="Mi trabajo con celebridades — look 3"
+                                 class="img-hover-zoom w-full h-full object-cover grayscale"
+                                 onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Trabajo+3'">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-[10px] text-brandGreen font-semibold uppercase tracking-[0.4em]">PORTAFOLIO</span>
+                        <h3 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+                            Mi trabajo con celebridades y alianzas con marcas de lujo
+                        </h3>
+                        <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                            He trabajado con figuras como Manelyk González, Roselyn Sánchez y talentos de Netflix, asesorando su imagen para red carpets, campañas y apariciones públicas. También he colaborado con marcas como Zimmermann, Dolce & Gabbana y Alexis Bittar, desarrollando conceptos que no solo elevan la estética de una persona, sino que cuentan una historia poderosa detrás de cada look.
+                        </p>
+                        <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                            Mi enfoque va más allá de "vestir bien"; se trata de construir una narrativa visual que hable antes de que tú lo hagas. En un mundo donde la percepción lo es todo, ayudar a mis clientes a encontrar su estilo y convertirlo en una herramienta de éxito es lo que define mi trabajo.
+                        </p>
+                        <div class="pt-2">
+                            <button onclick="switchTab('portafolio')" class="text-xs uppercase tracking-widest font-semibold border-b border-black pb-1 hover:text-brandGreen hover:border-brandGreen transition-colors duration-300">
+                                Ver Mi Portafolio &rarr;
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="max-w-7xl mx-auto px-6 md:px-12 py-32">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                     <div class="lg:col-span-5 space-y-8">
@@ -377,20 +427,100 @@
                 </div>
             </div>
 
+            <!-- Cartelera de Eventos (contenido real del sitio en vivo) -->
+            <div class="max-w-7xl mx-auto px-6 md:px-12 py-16 border-t border-black/10">
+                <div class="text-center mb-12">
+                    <span class="text-[10px] text-brandGreen font-semibold uppercase tracking-[0.4em]">AGENDA</span>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-3">Cartelera de Eventos</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Evento 1: Fashion Therapy -->
+                    <div class="border border-black/10 p-8 flex flex-col space-y-4">
+                        <span class="text-[10px] uppercase tracking-widest text-brandGreen font-bold">Sáb, 11 Jul</span>
+                        <h3 class="text-xl font-bold tracking-tight leading-snug">Fashion Therapy: De tu vibra al closet</h3>
+                        <p class="text-xs text-zinc-500 uppercase tracking-widest">11 Jul 2026 · 9:00–11:00 AM PDT · Vía Zoom</p>
+                        <p class="text-sm text-zinc-600 leading-relaxed font-normal flex-grow">
+                            Ya identificaste tu vibra. Ahora toca bajarla a tu clóset.
+                        </p>
+                        <a href="https://www.divalomasinc.com/event-details/fashion-therapy-de-tu-f-ck-ng-vibra-al-closet" target="_blank" rel="noopener noreferrer"
+                           class="inline-block text-center px-6 py-3 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black transition-all duration-300">
+                            Compra Tus Entradas
+                        </a>
+                    </div>
+                    <!-- Evento 2: Training 101 -->
+                    <div class="border border-black/10 p-8 flex flex-col space-y-4">
+                        <span class="text-[10px] uppercase tracking-widest text-zinc-400 font-bold">Fecha por confirmar</span>
+                        <h3 class="text-xl font-bold tracking-tight leading-snug">Training 101: Primer acercamiento al estilismo y la asesoría de imagen</h3>
+                        <p class="text-xs text-zinc-500 uppercase tracking-widest">Fecha y ubicación por determinar</p>
+                        <p class="text-sm text-zinc-600 leading-relaxed font-normal flex-grow">
+                            Un primer acercamiento práctico al mundo del estilismo y la asesoría de imagen profesional.
+                        </p>
+                        <a href="https://www.divalomasinc.com/event-details/training-101-primer-acercamiento-al-estilismo-y-la-asesoria-de-imagen" target="_blank" rel="noopener noreferrer"
+                           class="inline-block text-center px-6 py-3 border border-black text-black text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-all duration-300">
+                            RSVP
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Home Closing Section: Fondo negro reservado para impacto visual -->
             <div class="bg-black text-white py-24">
-                <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+                <div class="max-w-2xl mx-auto px-6 text-center space-y-4">
                     <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-bold">EMPEZAR EL CAMBIO</span>
                     <h2 class="text-4xl md:text-5xl font-bold tracking-wide leading-tight">
-                        Eleva tu presencia pública a niveles de alta costura conceptual.
+                        Hagamos que seas inolvidable.
                     </h2>
                     <p class="text-xs text-zinc-400 max-w-lg mx-auto leading-relaxed tracking-widest uppercase">
-                        Diseñado para directores creativos, consultores, figuras públicas e identidades singulares.
+                        Cuéntame qué estás construyendo. Las llamadas de estrategia duran 45 minutos: directas, específicas y sin rodeos.
                     </p>
-                    <div class="pt-6">
-                        <button onclick="switchTab('contacto')" class="px-8 py-4 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-brandGreen hover:border hover:border-brandGreen transition-all duration-300 shadow-lg">
-                            RESERVAR DIAGNÓSTICO SIN COSTO
-                        </button>
+                    <p class="text-xs text-zinc-500 pt-2">
+                        Contacto: <a href="mailto:info@divalomasinc.com" class="text-brandGreen hover:underline">info@divalomasinc.com</a>
+                    </p>
+
+                    <!-- Formulario real embebido en Home, réplica de campos del sitio en vivo -->
+                    <form id="home-cta-form" onsubmit="handleHomeFormSubmit(event)" class="text-left pt-10 space-y-10">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                            <div class="relative z-0 w-full group">
+                                <input type="text" name="home-firstname" id="home-firstname" required
+                                       class="block py-3 px-0 w-full text-sm text-white bg-transparent border-0 border-b border-white/20 appearance-none focus:outline-none focus:ring-0 focus:border-brandGreen transition-all peer" placeholder=" " />
+                                <label for="home-firstname" class="peer-focus:font-medium absolute text-xs uppercase tracking-widest text-zinc-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brandGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                    Nombre*
+                                </label>
+                            </div>
+                            <div class="relative z-0 w-full group">
+                                <input type="text" name="home-lastname" id="home-lastname" required
+                                       class="block py-3 px-0 w-full text-sm text-white bg-transparent border-0 border-b border-white/20 appearance-none focus:outline-none focus:ring-0 focus:border-brandGreen transition-all peer" placeholder=" " />
+                                <label for="home-lastname" class="peer-focus:font-medium absolute text-xs uppercase tracking-widest text-zinc-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brandGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                    Apellido*
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="relative z-0 w-full group">
+                            <input type="email" name="home-email" id="home-email" required
+                                   class="block py-3 px-0 w-full text-sm text-white bg-transparent border-0 border-b border-white/20 appearance-none focus:outline-none focus:ring-0 focus:border-brandGreen transition-all peer" placeholder=" " />
+                            <label for="home-email" class="peer-focus:font-medium absolute text-xs uppercase tracking-widest text-zinc-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brandGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                Email*
+                            </label>
+                        </div>
+
+                        <div class="relative z-0 w-full group">
+                            <textarea name="home-message" id="home-message" rows="3" required
+                                      class="block py-3 px-0 w-full text-sm text-white bg-transparent border-0 border-b border-white/20 appearance-none focus:outline-none focus:ring-0 focus:border-brandGreen transition-all peer" placeholder=" "></textarea>
+                            <label for="home-message" class="peer-focus:font-medium absolute text-xs uppercase tracking-widest text-zinc-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brandGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                ¿Qué estás construyendo?*
+                            </label>
+                        </div>
+
+                        <div class="flex justify-center pt-2">
+                            <button type="submit" class="w-full md:w-auto px-10 py-4 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-white hover:text-black transition-all duration-300 shadow-md">
+                                ENVIAR
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="home-form-success" class="hidden mt-6 p-4 border border-brandGreen text-white text-xs text-center font-normal uppercase tracking-widest">
+                        <span class="text-brandGreen font-bold mr-2">✓</span> Gracias — te contestaré en 24 horas hábiles.
                     </div>
                 </div>
             </div>
@@ -656,119 +786,182 @@
         <!-- ============================================== -->
         <section id="view-portafolio" class="tab-view hidden opacity-0 transition-opacity duration-500">
             <div class="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-32">
-                <div class="mb-16">
-                    <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-semibold">CASOS DE ESTUDIO</span>
-                    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mt-2">Nuestros Trabajos</h1>
-                    <div class="h-[1px] w-24 bg-black mt-6 mb-8"></div>
+                <div class="max-w-3xl mb-16 space-y-5">
+                    <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-semibold">PORTAFOLIO</span>
+                    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mt-2">Mi Trabajo</h1>
+                    <div class="h-[1px] w-24 bg-black mt-6 mb-4"></div>
+                    <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                        Bienvenido a mi portafolio, un espacio donde encontrarás una selección curada de proyectos que reflejan mi visión creativa, experiencia y enfoque profesional. Trabajo en la intersección del estilismo, la estrategia de imagen y la narrativa visual.
+                    </p>
+                    <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                        Con más de 18 años de experiencia en México y ahora también en Estados Unidos y Latinoamérica, ayudo a talentos, marcas y producciones a construir una presencia visual coherente tanto dentro como fuera de la pantalla. Desde el desarrollo del concepto y la dirección visual hasta los fittings y la ejecución en el set, aporto tanto visión creativa como conocimiento de producción a cada proyecto.
+                    </p>
+                    <p class="text-xs text-zinc-400 uppercase tracking-widest">Disponible para producciones editoriales, comerciales y enfocadas en talento.</p>
+                </div>
+
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold tracking-tight">Proyectos</h2>
+                    <p class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Haz clic en las imágenes para explorar cada proyecto.</p>
                 </div>
 
                 <!-- Bento editorial: tamaños asimétricos, blanco y negro que revela color al hover, número de caso y CTA a "Ver caso completo" -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[260px] gap-5 md:gap-6 [grid-auto-flow:dense]">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
 
-                    <!-- Proyecto 1 -->
-                    <button onclick="openCase(0)" aria-label="Ver caso: Morfologías Minimalistas" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-2 lg:row-span-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200"
-                             alt="Proyecto Editorial Siguiente Nivel"
-                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
-                             onerror="this.src='https://placehold.co/900x1100/1a1a1a/ffffff?text=Proyecto+1'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
-                        <span class="absolute top-5 left-5 text-[10px] font-bold text-white/70 tracking-[0.3em]">01</span>
-                        <span class="absolute top-5 right-5 w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                    <button onclick="openLightbox(0)" aria-label="Ver imagen de portafolio 1" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_9e46167b577a4ea1b7a01594a71d02ea~mv2.jpg/v1/fill/w_480,h_639,q_90,enc_avif,quality_auto/d352ca_9e46167b577a4ea1b7a01594a71d02ea~mv2.jpg" alt="Diva Lomas — Portafolio 1" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">01</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
                         </span>
-                        <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                            <span class="text-[10px] uppercase tracking-widest text-brandGreen font-bold block mb-2">Editorial Moda</span>
-                            <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight">Morfologías Minimalistas</h3>
-                            <p class="text-[10px] uppercase tracking-widest text-white/70 font-normal mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Ver caso completo &rarr;</p>
-                        </div>
                     </button>
 
-                    <!-- Proyecto 2 -->
-                    <button onclick="openCase(1)" aria-label="Ver caso: Dirección de Identidad" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-1 lg:row-span-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&q=80&w=800"
-                             alt="Curaduría de Imagen Corporativa"
-                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
-                             onerror="this.src='https://placehold.co/600x800/1a1a1a/ffffff?text=Proyecto+2'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
-                        <span class="absolute top-4 left-4 text-[10px] font-bold text-white/70 tracking-[0.3em]">02</span>
-                        <span class="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                    <button onclick="openLightbox(1)" aria-label="Ver imagen de portafolio 2" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_49421a2f358a4ad298f07882365e2a4b~mv2.jpg/v1/fill/w_480,h_641,q_90,enc_avif,quality_auto/d352ca_49421a2f358a4ad298f07882365e2a4b~mv2.jpg" alt="Diva Lomas — Portafolio 2" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">02</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
                         </span>
-                        <div class="absolute bottom-0 left-0 right-0 p-5">
-                            <span class="text-[9px] uppercase tracking-widest text-brandGreen font-bold block mb-1">Styling Ejecutivo</span>
-                            <h3 class="text-lg font-bold text-white leading-tight">Dirección de Identidad</h3>
-                        </div>
                     </button>
 
-                    <!-- Proyecto 3 -->
-                    <button onclick="openCase(2)" aria-label="Ver caso: Simetría Urbana" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-1 lg:row-span-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&q=80&w=800"
-                             alt="Campañas Visuales"
-                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
-                             onerror="this.src='https://placehold.co/600x800/1a1a1a/ffffff?text=Proyecto+3'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
-                        <span class="absolute top-4 left-4 text-[10px] font-bold text-white/70 tracking-[0.3em]">03</span>
-                        <span class="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                    <button onclick="openLightbox(2)" aria-label="Ver imagen de portafolio 3" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] lg:row-span-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_f56970eedbba4e91bb62954c148d8f19~mv2.webp/v1/fit/w_480,h_639,q_90,enc_avif,quality_auto/d352ca_f56970eedbba4e91bb62954c148d8f19~mv2.webp" alt="Diva Lomas — Portafolio 3" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">03</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
                         </span>
-                        <div class="absolute bottom-0 left-0 right-0 p-5">
-                            <span class="text-[9px] uppercase tracking-widest text-brandGreen font-bold block mb-1">Campaña Visual</span>
-                            <h3 class="text-lg font-bold text-white leading-tight">Simetría Urbana</h3>
-                        </div>
                     </button>
 
-                    <!-- Proyecto 4 -->
-                    <button onclick="openCase(3)" aria-label="Ver caso: Análisis Retrato" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-1 lg:row-span-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=800"
-                             alt="Portafolio Editorial"
-                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
-                             onerror="this.src='https://placehold.co/600x1100/1a1a1a/ffffff?text=Proyecto+4'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
-                        <span class="absolute top-5 left-5 text-[10px] font-bold text-white/70 tracking-[0.3em]">04</span>
-                        <span class="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                    <button onclick="openLightbox(3)" aria-label="Ver imagen de portafolio 4" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_eeb6cf6519fc43a5b3486f50c5eaf630~mv2.jpg/v1/fit/w_480,h_641,q_90,enc_avif,quality_auto/d352ca_eeb6cf6519fc43a5b3486f50c5eaf630~mv2.jpg" alt="Diva Lomas — Portafolio 4" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">04</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
                         </span>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <span class="text-[10px] uppercase tracking-widest text-brandGreen font-bold block mb-1">Rediseño Personal</span>
-                            <h3 class="text-xl font-bold text-white leading-tight">Análisis Retrato</h3>
-                            <p class="text-[10px] uppercase tracking-widest text-white/70 font-normal mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Ver caso completo &rarr;</p>
-                        </div>
                     </button>
 
-                    <!-- Proyecto 5 -->
-                    <button onclick="openCase(4)" aria-label="Ver caso: Siluetas Esculturales" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-2 lg:row-span-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&q=80&w=1200"
-                             alt="Colección y Vestidor"
-                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
-                             onerror="this.src='https://placehold.co/900x600/1a1a1a/ffffff?text=Proyecto+5'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
-                        <span class="absolute top-5 left-5 text-[10px] font-bold text-white/70 tracking-[0.3em]">05</span>
-                        <span class="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                    <button onclick="openLightbox(4)" aria-label="Ver imagen de portafolio 5" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_95d153184c0541d79ed117bdce883d5e~mv2.jpg/v1/fill/w_480,h_639,q_90,enc_avif,quality_auto/d352ca_95d153184c0541d79ed117bdce883d5e~mv2.jpg" alt="Diva Lomas — Portafolio 5" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">05</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
                         </span>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <span class="text-[10px] uppercase tracking-widest text-brandGreen font-bold block mb-1">Atelier Privé</span>
-                            <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Siluetas Esculturales</h3>
-                            <p class="text-[10px] uppercase tracking-widest text-white/70 font-normal mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Ver caso completo &rarr;</p>
-                        </div>
                     </button>
 
-                    <!-- Proyecto 6 -->
-                    <button onclick="openCase(5)" aria-label="Ver caso: Paleta Monocroma" class="group relative overflow-hidden bg-zinc-900 text-left w-full h-full aspect-[3/4] lg:aspect-auto lg:col-span-1 lg:row-span-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800"
-                             alt="Styling Arte"
-                             class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
-                             onerror="this.src='https://placehold.co/600x800/1a1a1a/ffffff?text=Proyecto+6'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
-                        <span class="absolute top-4 left-4 text-[10px] font-bold text-white/70 tracking-[0.3em]">06</span>
-                        <span class="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                    <button onclick="openLightbox(5)" aria-label="Ver imagen de portafolio 6" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_2b91a8d1f4c1487d9bf697cc73eb8ef2~mv2.jpg/v1/fill/w_480,h_641,q_90,enc_avif,quality_auto/d352ca_2b91a8d1f4c1487d9bf697cc73eb8ef2~mv2.jpg" alt="Diva Lomas — Portafolio 6" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">06</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
                         </span>
-                        <div class="absolute bottom-0 left-0 right-0 p-5">
-                            <span class="text-[9px] uppercase tracking-widest text-brandGreen font-bold block mb-1">Dirección de Estilo</span>
-                            <h3 class="text-lg font-bold text-white leading-tight">Paleta Monocroma</h3>
-                        </div>
                     </button>
+
+                    <button onclick="openLightbox(6)" aria-label="Ver imagen de portafolio 7" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_fc3800e5567e45b68a0b9a588e7b9561~mv2.png/v1/fill/w_480,h_639,q_90,enc_avif,quality_auto/d352ca_fc3800e5567e45b68a0b9a588e7b9561~mv2.png" alt="Diva Lomas — Portafolio 7" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">07</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        </span>
+                    </button>
+
+                    <button onclick="openLightbox(7)" aria-label="Ver imagen de portafolio 8" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_4d4ad1fff3e14ff2b91c66047e618954~mv2.png/v1/fill/w_480,h_641,q_90,enc_avif,quality_auto/d352ca_4d4ad1fff3e14ff2b91c66047e618954~mv2.png" alt="Diva Lomas — Portafolio 8" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">08</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        </span>
+                    </button>
+
+                    <button onclick="openLightbox(8)" aria-label="Ver imagen de portafolio 9" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] lg:row-span-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_66157899c98443468097f70b408ed077~mv2.jpg/v1/fill/w_480,h_639,q_90,enc_avif,quality_auto/d352ca_66157899c98443468097f70b408ed077~mv2.jpg" alt="Diva Lomas — Portafolio 9" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">09</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        </span>
+                    </button>
+
+                    <button onclick="openLightbox(9)" aria-label="Ver imagen de portafolio 10" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_01dec7cc46bf461d8fffba255ab77374~mv2.jpeg/v1/fill/w_480,h_641,q_90,enc_avif,quality_auto/d352ca_01dec7cc46bf461d8fffba255ab77374~mv2.jpeg" alt="Diva Lomas — Portafolio 10" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">10</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        </span>
+                    </button>
+
+                    <button onclick="openLightbox(10)" aria-label="Ver imagen de portafolio 11" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_d3d34c664fa54b1eae5508761a785192~mv2.jpg/v1/fill/w_480,h_639,q_90,enc_avif,quality_auto/d352ca_d3d34c664fa54b1eae5508761a785192~mv2.jpg" alt="Diva Lomas — Portafolio 11" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">11</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        </span>
+                    </button>
+
+                    <button onclick="openLightbox(11)" aria-label="Ver imagen de portafolio 12" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_8e5771e8b763433d8bcc7d63fcd29a19~mv2.jpg/v1/fill/w_480,h_641,q_90,enc_avif,quality_auto/d352ca_8e5771e8b763433d8bcc7d63fcd29a19~mv2.jpg" alt="Diva Lomas — Portafolio 12" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">12</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        </span>
+                    </button>
+
+                    <button onclick="openLightbox(12)" aria-label="Ver imagen de portafolio 13" class="group relative overflow-hidden bg-zinc-900 aspect-[3/4] focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen">
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_29dfb50999004bd1aee81604b4d34e6b~mv2.jpeg/v1/fill/w_480,h_639,q_90,enc_avif,quality_auto/d352ca_29dfb50999004bd1aee81604b4d34e6b~mv2.jpeg" alt="Diva Lomas — Portafolio 13" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <span class="absolute top-3 left-3 text-[9px] font-bold text-white/80 tracking-[0.3em] drop-shadow">13</span>
+                        <span class="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-brandGreen group-hover:border-brandGreen transition-all duration-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        </span>
+                    </button>
+
+                </div>
+
+                <!-- Mi Rol en Producción (contenido real del sitio en vivo) -->
+                <div class="mt-28 pt-16 border-t border-black/10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+                        <div class="space-y-3">
+                            <h3 class="text-[10px] text-brandGreen uppercase tracking-[0.35em] font-bold">Mi Rol en Producción</h3>
+                            <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                                Aporto a las producciones una combinación de estrategia visual, estilismo y ejecución en el set, asegurando que la imagen se convierta en una parte intencional de la narrativa.
+                            </p>
+                        </div>
+                        <div></div>
+
+                        <div class="space-y-3 border-t border-black/10 pt-8">
+                            <h3 class="text-sm font-bold uppercase tracking-widest">Desarrollo de Concepto Visual</h3>
+                            <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                                Traduzco los briefs creativos, la identidad de marca y el posicionamiento del talento en una dirección visual clara. Esto incluye definir el mood, las referencias, el lenguaje de las siluetas y el tono estético general, siempre alineado con el propósito de la producción.
+                            </p>
+                        </div>
+                        <div class="space-y-3 border-t border-black/10 pt-8">
+                            <h3 class="text-sm font-bold uppercase tracking-widest">Estilismo Editorial y Narrativo</h3>
+                            <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                                Abordo el vestuario como un lenguaje visual, donde las proporciones, las texturas y la estructura comunican carácter, estatus y emoción. Cada look está diseñado para respaldar la narrativa, ya sea para un entorno editorial, una alfombra roja o contenido comercial.
+                            </p>
+                        </div>
+                        <div class="space-y-3 border-t border-black/10 pt-8">
+                            <h3 class="text-sm font-bold uppercase tracking-widest">Coordinación Creativa y de Producción</h3>
+                            <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                                Trabajo de la mano con equipos de relaciones públicas, diseñadores, equipos de producción y talento para asegurar la alineación en todos los elementos visuales. Desde la gestión de pulls y fittings hasta la adaptación de decisiones de estilismo en tiempo real, conecto la visión creativa con la ejecución logística.
+                            </p>
+                        </div>
+                        <div class="space-y-3 border-t border-black/10 pt-8">
+                            <h3 class="text-sm font-bold uppercase tracking-widest">Ejecución en el Set</h3>
+                            <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                                Superviso la continuidad del estilismo, realizo ajustes bajo presión y colaboro con fotógrafos, directores y equipos de glam para asegurar que cada cuadro refleje la narrativa planteada.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -934,7 +1127,7 @@
         <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
             <!-- Izquierda: Copyright simple -->
             <div class="text-[10px] tracking-widest uppercase font-normal text-zinc-500 text-center md:text-left">
-                &copy; 2026 DIVA LOMAS INC. TODOS LOS DERECHOS RESERVADOS.
+                &copy; 2026 by DivaLomas&trade;
             </div>
 
             <!-- Centro: Redes Sociales -->
@@ -954,6 +1147,17 @@
             <div class="text-[10px] tracking-widest uppercase font-normal text-zinc-500 text-center md:text-right">
                 LOS ANGELES, CA
             </div>
+        </div>
+
+        <!-- Fila adicional: contacto directo y aviso de privacidad (contenido real del sitio en vivo) -->
+        <div class="max-w-7xl mx-auto px-6 md:px-12 mt-6 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
+            <a href="mailto:info@divalomasinc.com" class="text-[10px] tracking-widest uppercase font-normal text-zinc-500 hover:text-brandGreen transition-colors duration-300">
+                info@divalomasinc.com
+            </a>
+            <span class="hidden md:inline text-zinc-700">·</span>
+            <a href="#" class="text-[10px] tracking-widest uppercase font-normal text-zinc-500 hover:text-brandGreen transition-colors duration-300">
+                Aviso de Privacidad
+            </a>
         </div>
     </footer>
 
@@ -1020,71 +1224,33 @@
     <!-- MODAL DE CASO DE ESTUDIO — Portafolio -->
     <!-- Se abre al dar click en cualquier proyecto del bento grid -->
     <!-- ============================================== -->
-    <div id="case-modal" class="hidden-case fixed inset-0 z-[80] bg-black flex items-stretch justify-center" role="dialog" aria-modal="true" aria-labelledby="case-title">
-        <div class="relative w-full h-full overflow-y-auto">
-
-            <!-- Barra superior fija: cerrar + índice -->
-            <div class="sticky top-0 z-10 flex items-center justify-between px-6 md:px-10 py-5 bg-black/80 backdrop-blur-md border-b border-white/10">
-                <span id="case-index" class="text-[10px] uppercase tracking-[0.3em] text-white/60 font-bold">01 / 06</span>
-                <span class="text-[10px] uppercase tracking-[0.3em] text-brandGreen font-bold hidden sm:block">DIVA LOMAS · CASO DE ESTUDIO</span>
-                <button onclick="closeCase()" aria-label="Cerrar caso de estudio" class="tap-target flex items-center justify-center text-white hover:text-brandGreen transition-colors duration-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-                </button>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100%-73px)]">
-                <!-- Imagen protagonista -->
-                <div class="relative bg-zinc-900 h-[45vh] lg:h-auto">
-                    <img id="case-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover">
-                </div>
-
-                <!-- Contenido editorial -->
-                <div class="bg-white px-6 md:px-14 py-12 md:py-16 flex flex-col justify-center">
-                    <span id="case-category" class="text-[10px] text-brandGreen uppercase tracking-[0.35em] font-bold block mb-4"></span>
-                    <h2 id="case-title" class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6"></h2>
-                    <p id="case-tagline" class="text-sm md:text-base text-zinc-500 italic font-normal mb-8"></p>
-
-                    <div class="space-y-6 mb-8">
-                        <div>
-                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-black mb-2">El reto</h4>
-                            <p id="case-challenge" class="text-sm text-zinc-600 font-normal leading-relaxed"></p>
-                        </div>
-                        <div>
-                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-black mb-2">El enfoque</h4>
-                            <p id="case-approach" class="text-sm text-zinc-600 font-normal leading-relaxed"></p>
-                        </div>
-                    </div>
-
-                    <blockquote class="border-l-4 border-brandGreen pl-5 py-1 mb-10">
-                        <p id="case-quote" class="text-base md:text-lg font-bold italic leading-snug"></p>
-                    </blockquote>
-
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="switchTab('contacto'); closeCase();" class="group relative px-8 py-4 bg-black text-white text-xs uppercase tracking-widest font-bold hover:bg-brandGreen transition-colors duration-300 text-center">
-                            Quiero un proyecto así →
-                        </button>
-                        <button onclick="switchTab('servicios'); closeCase();" class="px-8 py-4 border border-black text-black text-xs uppercase tracking-widest font-bold hover:border-brandGreen hover:text-brandGreen transition-colors duration-300 text-center">
-                            Ver servicios
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Navegación anterior / siguiente -->
-            <button onclick="navigateCase(-1)" aria-label="Caso anterior"
-                    class="hidden md:flex fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 hover:bg-brandGreen border border-white/20 items-center justify-center text-white transition-colors duration-300 z-10">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    <div id="lightbox" class="hidden-case fixed inset-0 z-[80] bg-black/95 flex items-center justify-center" role="dialog" aria-modal="true" aria-label="Galería de portafolio">
+        <!-- Barra superior: índice + cerrar -->
+        <div class="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 md:px-10 py-5">
+            <span id="lightbox-index" class="text-[10px] uppercase tracking-[0.3em] text-white/60 font-bold">01 / 13</span>
+            <span class="text-[10px] uppercase tracking-[0.3em] text-brandGreen font-bold hidden sm:block">DIVA LOMAS · PORTAFOLIO</span>
+            <button onclick="closeLightbox()" aria-label="Cerrar galería" class="tap-target flex items-center justify-center text-white hover:text-brandGreen transition-colors duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
-            <button onclick="navigateCase(1)" aria-label="Caso siguiente"
-                    class="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 hover:bg-brandGreen border border-white/20 items-center justify-center text-white transition-colors duration-300 z-10">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </button>
+        </div>
 
-            <!-- Navegación móvil (abajo) -->
-            <div class="md:hidden flex items-center justify-between px-6 py-6 border-t border-black/10" style="padding-bottom: max(1.5rem, calc(var(--safe-bottom) + 1rem));">
-                <button onclick="navigateCase(-1)" aria-label="Caso anterior" class="tap-target text-xs uppercase tracking-widest font-bold flex items-center gap-2">&larr; Anterior</button>
-                <button onclick="navigateCase(1)" aria-label="Caso siguiente" class="tap-target text-xs uppercase tracking-widest font-bold flex items-center gap-2">Siguiente &rarr;</button>
-            </div>
+        <!-- Imagen a pantalla completa -->
+        <img id="lightbox-image" src="" alt="" class="max-w-full max-h-[80vh] md:max-h-[85vh] object-contain px-4">
+
+        <!-- Navegación anterior / siguiente (escritorio) -->
+        <button onclick="navigateLightbox(-1)" aria-label="Imagen anterior"
+                class="hidden md:flex fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 hover:bg-brandGreen border border-white/20 items-center justify-center text-white transition-colors duration-300 z-10">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button onclick="navigateLightbox(1)" aria-label="Imagen siguiente"
+                class="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 hover:bg-brandGreen border border-white/20 items-center justify-center text-white transition-colors duration-300 z-10">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <!-- Navegación móvil (abajo) -->
+        <div class="md:hidden absolute bottom-0 left-0 right-0 flex items-center justify-between px-8 py-6" style="padding-bottom: max(1.5rem, calc(var(--safe-bottom) + 1rem));">
+            <button onclick="navigateLightbox(-1)" aria-label="Imagen anterior" class="tap-target text-xs uppercase tracking-widest font-bold text-white flex items-center gap-2">&larr; Anterior</button>
+            <button onclick="navigateLightbox(1)" aria-label="Imagen siguiente" class="tap-target text-xs uppercase tracking-widest font-bold text-white flex items-center gap-2">Siguiente &rarr;</button>
         </div>
     </div>
 
@@ -1092,110 +1258,64 @@
         // ============================================
         // Portafolio: datos de casos de estudio
         // ============================================
-        const PROJECTS = [
-            {
-                category: 'Editorial Moda',
-                title: 'Morfologías Minimalistas',
-                tagline: 'Una dirección de imagen construida para durar más que la tendencia.',
-                image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1600',
-                challenge: 'Una figura pública con presencia sólida en medios necesitaba una imagen que se sintiera coherente frente a cámara, en prensa y en su día a día — sin perder personalidad ni caer en un molde genérico.',
-                approach: 'Trabajamos silueta, paleta de color y guardarropa como un sistema único: cada pieza responde a una lógica de proporción y contraste, pensada para funcionar tanto en editorial como en el uso real.',
-                quote: '"Por primera vez sentí que mi imagen hablaba por mí antes de decir una palabra."'
-            },
-            {
-                category: 'Styling Ejecutivo',
-                title: 'Dirección de Identidad',
-                tagline: 'Presencia ejecutiva sin sacrificar personalidad.',
-                image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&q=80&w=1600',
-                challenge: 'Una fundadora en ronda de inversión necesitaba proyectar autoridad frente a inversionistas sin perder la calidez que la distingue con su equipo y su comunidad.',
-                approach: 'Diseñamos un guardarropa ejecutivo modular: piezas que se combinan entre sí para cubrir juntas, pitches y contenido de marca personal, todo dentro de una paleta de tres tonos.',
-                quote: '"Dejé de pensar en qué ponerme y empecé a pensar en lo que quería decir."'
-            },
-            {
-                category: 'Campaña Visual',
-                title: 'Simetría Urbana',
-                tagline: 'Una campaña de temporada construida sobre líneas limpias y contraste.',
-                image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&q=80&w=1600',
-                challenge: 'Una marca emergente necesitaba una campaña visual que comunicara su identidad sin recurrir a los códigos visuales ya saturados de su categoría.',
-                approach: 'Definimos una dirección de arte basada en simetría, texturas urbanas y una paleta reducida a blanco, negro y un acento de color — coherente con la identidad de marca en cada plataforma.',
-                quote: '"La campaña se sintió inmediatamente reconocible como nuestra."'
-            },
-            {
-                category: 'Rediseño Personal',
-                title: 'Análisis Retrato',
-                tagline: 'Un diagnóstico profundo como punto de partida para una transformación real.',
-                image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=1600',
-                challenge: 'Una profesional en transición de carrera necesitaba entender qué comunicaba su imagen actual y qué necesitaba cambiar para alinearla con su próximo capítulo.',
-                approach: 'Partimos de un Fashion Analysis completo: silueta, colorimetría y presencia digital, para construir un Image Book con lineamientos claros y aplicables desde el primer día.',
-                quote: '"Fue la primera vez que alguien me explicó el por qué detrás de cada elección."'
-            },
-            {
-                category: 'Atelier Privé',
-                title: 'Siluetas Esculturales',
-                tagline: 'Guardarropa como arquitectura: cada pieza con una función definida.',
-                image: 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&q=80&w=1600',
-                challenge: 'Un clóset con inversión considerable pero sin cohesión: piezas de alto nivel que no conversaban entre sí ni con la vida real de la clienta.',
-                approach: 'Auditamos, editamos y reorganizamos el guardarropa completo, identificando vacíos estratégicos y construyendo looks reales con lo que ya existía antes de sumar una sola prenda nueva.',
-                quote: '"Redescubrí piezas que ya tenía y que nunca supe cómo usar."'
-            },
-            {
-                category: 'Dirección de Estilo',
-                title: 'Paleta Monocroma',
-                tagline: 'Una identidad visual construida alrededor de un solo gesto de color.',
-                image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1600',
-                challenge: 'Un creador de contenido en crecimiento acelerado necesitaba una identidad visual reconocible antes de escalar su presencia a nuevas plataformas y marcas.',
-                approach: 'Construimos un sistema de imagen monocromático con un único acento de color como firma visual, aplicado a guardarropa, sets y dirección de contenido.',
-                quote: '"Ahora la gente reconoce mi contenido antes de ver mi nombre."'
-            }
+        // ============================================
+        // Portafolio: galería real de imágenes (13 fotos, contenido del sitio en vivo)
+        // ============================================
+        const PORTFOLIO_IMAGES = [
+            'https://static.wixstatic.com/media/d352ca_9e46167b577a4ea1b7a01594a71d02ea~mv2.jpg/v1/fill/w_960,h_1278,q_90,enc_avif,quality_auto/d352ca_9e46167b577a4ea1b7a01594a71d02ea~mv2.jpg',
+            'https://static.wixstatic.com/media/d352ca_49421a2f358a4ad298f07882365e2a4b~mv2.jpg/v1/fit/w_960,h_1282,q_90,enc_avif,quality_auto/d352ca_49421a2f358a4ad298f07882365e2a4b~mv2.jpg',
+            'https://static.wixstatic.com/media/d352ca_f56970eedbba4e91bb62954c148d8f19~mv2.webp/v1/fit/w_960,h_1278,q_90,enc_avif,quality_auto/d352ca_f56970eedbba4e91bb62954c148d8f19~mv2.webp',
+            'https://static.wixstatic.com/media/d352ca_eeb6cf6519fc43a5b3486f50c5eaf630~mv2.jpg/v1/fit/w_960,h_1282,q_90,enc_avif,quality_auto/d352ca_eeb6cf6519fc43a5b3486f50c5eaf630~mv2.jpg',
+            'https://static.wixstatic.com/media/d352ca_95d153184c0541d79ed117bdce883d5e~mv2.jpg/v1/fill/w_960,h_1278,q_90,enc_avif,quality_auto/d352ca_95d153184c0541d79ed117bdce883d5e~mv2.jpg',
+            'https://static.wixstatic.com/media/d352ca_2b91a8d1f4c1487d9bf697cc73eb8ef2~mv2.jpg/v1/fill/w_960,h_1282,q_90,enc_avif,quality_auto/d352ca_2b91a8d1f4c1487d9bf697cc73eb8ef2~mv2.jpg',
+            'https://static.wixstatic.com/media/d352ca_fc3800e5567e45b68a0b9a588e7b9561~mv2.png/v1/fill/w_960,h_1278,q_90,enc_avif,quality_auto/d352ca_fc3800e5567e45b68a0b9a588e7b9561~mv2.png',
+            'https://static.wixstatic.com/media/d352ca_4d4ad1fff3e14ff2b91c66047e618954~mv2.png/v1/fill/w_960,h_1282,q_90,enc_avif,quality_auto/d352ca_4d4ad1fff3e14ff2b91c66047e618954~mv2.png',
+            'https://static.wixstatic.com/media/d352ca_66157899c98443468097f70b408ed077~mv2.jpg/v1/fill/w_960,h_1278,q_90,enc_avif,quality_auto/d352ca_66157899c98443468097f70b408ed077~mv2.jpg',
+            'https://static.wixstatic.com/media/d352ca_01dec7cc46bf461d8fffba255ab77374~mv2.jpeg/v1/fill/w_960,h_1282,q_90,enc_avif,quality_auto/d352ca_01dec7cc46bf461d8fffba255ab77374~mv2.jpeg',
+            'https://static.wixstatic.com/media/d352ca_d3d34c664fa54b1eae5508761a785192~mv2.jpg/v1/fill/w_960,h_1278,q_90,enc_avif,quality_auto/d352ca_d3d34c664fa54b1eae5508761a785192~mv2.jpg',
+            'https://static.wixstatic.com/media/d352ca_8e5771e8b763433d8bcc7d63fcd29a19~mv2.jpg/v1/fill/w_960,h_1282,q_90,enc_avif,quality_auto/d352ca_8e5771e8b763433d8bcc7d63fcd29a19~mv2.jpg',
+            'https://static.wixstatic.com/media/d352ca_29dfb50999004bd1aee81604b4d34e6b~mv2.jpeg/v1/fill/w_960,h_1278,q_90,enc_avif,quality_auto/d352ca_29dfb50999004bd1aee81604b4d34e6b~mv2.jpeg'
         ];
 
-        let currentCaseIndex = 0;
-        const caseModal = document.getElementById('case-modal');
+        let currentLightboxIndex = 0;
+        const lightbox = document.getElementById('lightbox');
 
-        function renderCase(index) {
-            const p = PROJECTS[index];
-            document.getElementById('case-category').textContent = p.category;
-            document.getElementById('case-title').textContent = p.title;
-            document.getElementById('case-tagline').textContent = p.tagline;
-            document.getElementById('case-challenge').textContent = p.challenge;
-            document.getElementById('case-approach').textContent = p.approach;
-            document.getElementById('case-quote').textContent = p.quote;
-            const img = document.getElementById('case-image');
-            img.src = p.image;
-            img.alt = p.title;
-            document.getElementById('case-index').textContent =
-                String(index + 1).padStart(2, '0') + ' / ' + String(PROJECTS.length).padStart(2, '0');
-
-            // Reinicia la animación de entrada del contenido
-            const contentCol = caseModal.querySelector('.bg-white');
-            contentCol.classList.remove('case-fade');
-            void contentCol.offsetWidth; // reflow forzado
-            contentCol.classList.add('case-fade');
+        function renderLightbox(index) {
+            const img = document.getElementById('lightbox-image');
+            img.src = PORTFOLIO_IMAGES[index];
+            img.alt = 'Diva Lomas — Portafolio, imagen ' + (index + 1);
+            document.getElementById('lightbox-index').textContent =
+                String(index + 1).padStart(2, '0') + ' / ' + String(PORTFOLIO_IMAGES.length).padStart(2, '0');
         }
 
-        function openCase(index) {
-            currentCaseIndex = index;
-            renderCase(currentCaseIndex);
-            caseModal.classList.remove('hidden-case');
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            renderLightbox(currentLightboxIndex);
+            lightbox.classList.remove('hidden-case');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeCase() {
-            caseModal.classList.add('hidden-case');
+        function closeLightbox() {
+            lightbox.classList.add('hidden-case');
             document.body.style.overflow = '';
         }
 
-        function navigateCase(direction) {
-            currentCaseIndex = (currentCaseIndex + direction + PROJECTS.length) % PROJECTS.length;
-            renderCase(currentCaseIndex);
+        function navigateLightbox(direction) {
+            currentLightboxIndex = (currentLightboxIndex + direction + PORTFOLIO_IMAGES.length) % PORTFOLIO_IMAGES.length;
+            renderLightbox(currentLightboxIndex);
         }
+
+        // Cerrar con click en el fondo oscuro (fuera de la imagen)
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
 
         // Cerrar con Escape, navegar con flechas del teclado
         document.addEventListener('keydown', function(e) {
-            if (caseModal.classList.contains('hidden-case')) return;
-            if (e.key === 'Escape') closeCase();
-            if (e.key === 'ArrowRight') navigateCase(1);
-            if (e.key === 'ArrowLeft') navigateCase(-1);
+            if (lightbox.classList.contains('hidden-case')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
         });
 
         // Tab system variables
@@ -1355,6 +1475,19 @@
             document.getElementById('contact-form').reset();
 
             // Auto hide message after 6 seconds
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Home CTA Form Submission Handler (réplica del formulario real "Hagamos que seas inolvidable")
+        function handleHomeFormSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('home-form-success');
+            alertBox.classList.remove('hidden');
+
+            document.getElementById('home-cta-form').reset();
+
             setTimeout(() => {
                 alertBox.classList.add('hidden');
             }, 6000);
