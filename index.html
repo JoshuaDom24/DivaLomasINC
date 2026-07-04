@@ -15,6 +15,8 @@
     <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='50' y='68' font-size='58' fill='%2300af12' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='bold'%3EDL%3C/text%3E%3C/svg%3E">
     <!-- Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Tipografía de marca: Arial. Bold para títulos/jerarquía, Regular para texto de cuerpo. -->
     <!-- FontAwesome para íconos sociales minimalistas -->
@@ -203,6 +205,25 @@
             pointer-events: none;
             visibility: hidden;
         }
+        #lightbox-image {
+            transform: scale(0.92);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+        }
+        #lightbox-image.zoomed-in {
+            transform: scale(1);
+            opacity: 1;
+        }
+        /* Modal de reserva de calendario */
+        #booking-modal {
+            transition: opacity 0.35s ease;
+            opacity: 1;
+        }
+        #booking-modal.hidden-case {
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+        }
         /* Floating discreet CTA */
         #float-cta {
             opacity: 0;
@@ -268,10 +289,10 @@
             <!-- Hero Section -->
             <div class="hero-viewport relative w-full overflow-hidden flex items-center justify-center bg-zinc-100">
                 <!-- Background Editorial Image -->
-                <img loading="eager" fetchpriority="high" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1920" 
-                     alt="Editorial de Moda Blanco y Negro" 
+                <img loading="eager" fetchpriority="high" src="https://static.wixstatic.com/media/d352ca_9e46167b577a4ea1b7a01594a71d02ea~mv2.jpg/v1/fill/w_1920,h_1280,q_90,enc_avif,quality_auto/d352ca_9e46167b577a4ea1b7a01594a71d02ea~mv2.jpg" 
+                     alt="Diva Lomas — Portafolio Editorial" 
                      class="absolute inset-0 w-full h-full object-cover grayscale contrast-115 brightness-95"
-                     onerror="this.src='https://placehold.co/1920x1080/e5e5e5/000000?text=Editorial+Fashion+Placeholder'">
+                     onerror="this.src='https://placehold.co/1920x1080/e5e5e5/000000?text=Diva+Lomas'">
                 
                 <!-- Overlay Darkening slightly for text readability -->
                 <div class="absolute inset-0 bg-black/5"></div>
@@ -324,14 +345,14 @@
                 </div>
             </div>
 
-            <!-- "Como se ha visto en" — prueba social pasiva, solo texto, sin logos ni IP de terceros -->
+            <!-- "Como se ha visto en" — reproducción tipográfica de las cabeceras editoriales, no artwork oficial de cada marca -->
             <div class="max-w-7xl mx-auto px-6 md:px-12 pt-16">
-                <p class="text-center text-[10px] uppercase tracking-[0.4em] text-zinc-400 mb-6">Como se ha visto en</p>
-                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 text-zinc-400">
-                    <span class="text-sm italic tracking-wide font-normal">Marie Claire</span>
-                    <span class="text-sm italic tracking-wide font-normal">People en Español</span>
-                    <span class="text-sm italic tracking-wide font-normal">Vanity Fair France</span>
-                    <span class="text-sm italic tracking-wide font-normal">Vogue México</span>
+                <p class="text-center text-[10px] uppercase tracking-[0.4em] text-zinc-400 mb-8">Como se ha visto en</p>
+                <div class="flex flex-wrap justify-center items-center gap-x-14 gap-y-8 grayscale opacity-70">
+                    <span class="font-serif text-2xl md:text-3xl tracking-[0.15em] uppercase" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700;">VOGUE <span class="text-sm normal-case tracking-normal align-middle">México</span></span>
+                    <span class="font-serif text-xl md:text-2xl italic tracking-tight" style="font-family: Georgia, 'Times New Roman', serif;">Marie Claire</span>
+                    <span class="text-lg md:text-xl font-black tracking-tight" style="font-family: Georgia, serif;">PEOPLE <span class="font-normal italic text-sm align-middle">en Español</span></span>
+                    <span class="font-serif text-lg md:text-xl tracking-wide" style="font-family: Georgia, 'Times New Roman', serif; font-style: italic;">Vanity Fair <span class="not-italic text-xs tracking-widest align-middle">FRANCE</span></span>
                 </div>
             </div>
 
@@ -356,20 +377,20 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                     <div class="lg:col-span-7 grid grid-cols-3 gap-3">
                         <div class="overflow-hidden bg-zinc-100 aspect-[3/4] col-span-1">
-                            <img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=600"
-                                 alt="Mi trabajo con celebridades — look 1"
+                            <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_49421a2f358a4ad298f07882365e2a4b~mv2.jpg/v1/fill/w_640,h_853,q_90,enc_avif,quality_auto/d352ca_49421a2f358a4ad298f07882365e2a4b~mv2.jpg"
+                                 alt="Diva Lomas — Trabajo con talento, look 1"
                                  class="img-hover-zoom w-full h-full object-cover grayscale"
                                  onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Trabajo+1'">
                         </div>
                         <div class="overflow-hidden bg-zinc-100 aspect-[3/4] col-span-1 translate-y-8">
-                            <img loading="lazy" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=600"
-                                 alt="Mi trabajo con celebridades — look 2"
+                            <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_f56970eedbba4e91bb62954c148d8f19~mv2.webp/v1/fill/w_640,h_853,q_90,enc_avif,quality_auto/d352ca_f56970eedbba4e91bb62954c148d8f19~mv2.webp"
+                                 alt="Diva Lomas — Trabajo con talento, look 2"
                                  class="img-hover-zoom w-full h-full object-cover grayscale"
                                  onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Trabajo+2'">
                         </div>
                         <div class="overflow-hidden bg-zinc-100 aspect-[3/4] col-span-1">
-                            <img loading="lazy" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=600"
-                                 alt="Mi trabajo con celebridades — look 3"
+                            <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_eeb6cf6519fc43a5b3486f50c5eaf630~mv2.jpg/v1/fill/w_640,h_853,q_90,enc_avif,quality_auto/d352ca_eeb6cf6519fc43a5b3486f50c5eaf630~mv2.jpg"
+                                 alt="Diva Lomas — Trabajo con talento, look 3"
                                  class="img-hover-zoom w-full h-full object-cover grayscale"
                                  onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Trabajo+3'">
                         </div>
@@ -412,14 +433,14 @@
                     </div>
                     <div class="lg:col-span-7 grid grid-cols-2 gap-4">
                         <div class="overflow-hidden bg-zinc-100 aspect-[3/4]">
-                            <img loading="lazy" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800" 
-                                 alt="Editorial de Moda Concepto 1" 
+                            <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_95d153184c0541d79ed117bdce883d5e~mv2.jpg/v1/fill/w_800,h_1067,q_90,enc_avif,quality_auto/d352ca_95d153184c0541d79ed117bdce883d5e~mv2.jpg" 
+                                 alt="Diva Lomas — Editorial 1" 
                                  class="img-hover-zoom w-full h-full object-cover grayscale"
                                  onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Editorial+1'">
                         </div>
                         <div class="overflow-hidden bg-zinc-100 aspect-[3/4] translate-y-8">
-                            <img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800" 
-                                 alt="Editorial de Moda Concepto 2" 
+                            <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_2b91a8d1f4c1487d9bf697cc73eb8ef2~mv2.jpg/v1/fill/w_800,h_1067,q_90,enc_avif,quality_auto/d352ca_2b91a8d1f4c1487d9bf697cc73eb8ef2~mv2.jpg" 
+                                 alt="Diva Lomas — Editorial 2" 
                                  class="img-hover-zoom w-full h-full object-cover grayscale"
                                  onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Editorial+2'">
                         </div>
@@ -442,10 +463,10 @@
                         <p class="text-sm text-zinc-600 leading-relaxed font-normal flex-grow">
                             Ya identificaste tu vibra. Ahora toca bajarla a tu clóset.
                         </p>
-                        <a href="https://www.divalomasinc.com/event-details/fashion-therapy-de-tu-f-ck-ng-vibra-al-closet" target="_blank" rel="noopener noreferrer"
-                           class="inline-block text-center px-6 py-3 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black transition-all duration-300">
-                            Compra Tus Entradas
-                        </a>
+                        <button onclick="contactarWhatsApp('asistir a Fashion Therapy: De tu vibra al closet')"
+                           class="inline-flex items-center justify-center gap-2 text-center px-6 py-3 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black transition-all duration-300">
+                            <i class="fab fa-whatsapp"></i> Reservar por WhatsApp
+                        </button>
                     </div>
                     <!-- Evento 2: Training 101 -->
                     <div class="border border-black/10 p-8 flex flex-col space-y-4">
@@ -455,10 +476,10 @@
                         <p class="text-sm text-zinc-600 leading-relaxed font-normal flex-grow">
                             Un primer acercamiento práctico al mundo del estilismo y la asesoría de imagen profesional.
                         </p>
-                        <a href="https://www.divalomasinc.com/event-details/training-101-primer-acercamiento-al-estilismo-y-la-asesoria-de-imagen" target="_blank" rel="noopener noreferrer"
-                           class="inline-block text-center px-6 py-3 border border-black text-black text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-all duration-300">
-                            RSVP
-                        </a>
+                        <button onclick="contactarWhatsApp('asistir a Training 101: Primer acercamiento al estilismo y la asesoría de imagen')"
+                           class="inline-flex items-center justify-center gap-2 text-center px-6 py-3 border border-black text-black text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-all duration-300">
+                            <i class="fab fa-whatsapp"></i> RSVP por WhatsApp
+                        </button>
                     </div>
                 </div>
             </div>
@@ -551,7 +572,7 @@
                 <!-- Bloque 1: Diagnóstico de Imagen — SESIÓN FIJA -->
                 <div class="border-t border-black/10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                     <div class="overflow-hidden bg-zinc-50 aspect-[4/3]">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=1200"
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_66157899c98443468097f70b408ed077~mv2.jpg/v1/fill/w_1200,h_900,q_90,enc_avif,quality_auto/d352ca_66157899c98443468097f70b408ed077~mv2.jpg"
                              alt="Diagnóstico de Imagen"
                              class="img-hover-zoom w-full h-full object-cover grayscale"
                              onerror="this.src='https://placehold.co/800x600/e5e5e5/000000?text=Diagnostico+de+Imagen'">
@@ -570,30 +591,44 @@
                         </div>
 
                         <div class="border border-black/10 divide-y divide-black/10 mt-6">
-                            <div class="flex justify-between items-center px-4 py-3 text-xs">
-                                <span class="uppercase tracking-widest text-zinc-500">Fashion Analysis Express</span>
-                                <span class="font-semibold">1h · $99 · Compra directa</span>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 px-4 py-3 text-xs">
+                                <div>
+                                    <span class="uppercase tracking-widest text-zinc-500 block">Fashion Analysis Express</span>
+                                    <span class="font-semibold">1h · $99 · Online</span>
+                                </div>
+                                <button onclick="openBooking('Fashion Analysis Express')" class="text-[10px] uppercase tracking-widest font-bold border border-black px-4 py-2 hover:bg-brandGreen hover:border-brandGreen hover:text-white transition-all duration-300 whitespace-nowrap">
+                                    Reservar &rarr;
+                                </button>
                             </div>
-                            <div class="flex justify-between items-center px-4 py-3 text-xs">
-                                <span class="uppercase tracking-widest text-zinc-500">Fashion Analysis</span>
-                                <span class="font-semibold">2h · $250 · Online</span>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 px-4 py-3 text-xs">
+                                <div>
+                                    <span class="uppercase tracking-widest text-zinc-500 block">Fashion Analysis</span>
+                                    <span class="font-semibold">2h · $250 · Online</span>
+                                </div>
+                                <button onclick="openBooking('Fashion Analysis')" class="text-[10px] uppercase tracking-widest font-bold border border-black px-4 py-2 hover:bg-brandGreen hover:border-brandGreen hover:text-white transition-all duration-300 whitespace-nowrap">
+                                    Reservar &rarr;
+                                </button>
                             </div>
-                            <div class="flex justify-between items-center px-4 py-3 text-xs">
-                                <span class="uppercase tracking-widest text-zinc-500">Color Analysis</span>
-                                <span class="font-semibold">2h · $250 · Online</span>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 px-4 py-3 text-xs">
+                                <div>
+                                    <span class="uppercase tracking-widest text-zinc-500 block">Color Analysis</span>
+                                    <span class="font-semibold">2h · $250 · Online</span>
+                                </div>
+                                <button onclick="contactarWhatsApp('el servicio de Color Analysis')" class="text-[10px] uppercase tracking-widest font-bold border border-black px-4 py-2 hover:bg-black hover:text-white transition-all duration-300 whitespace-nowrap flex items-center gap-1.5">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </button>
                             </div>
-                            <div class="flex justify-between items-center px-4 py-3 text-xs">
-                                <span class="uppercase tracking-widest text-zinc-500">Digital Styling</span>
-                                <span class="font-semibold">2h · $250 · Online</span>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 px-4 py-3 text-xs">
+                                <div>
+                                    <span class="uppercase tracking-widest text-zinc-500 block">Digital Styling</span>
+                                    <span class="font-semibold">2h · $250 · Online</span>
+                                </div>
+                                <button onclick="contactarWhatsApp('el servicio de Digital Styling')" class="text-[10px] uppercase tracking-widest font-bold border border-black px-4 py-2 hover:bg-black hover:text-white transition-all duration-300 whitespace-nowrap flex items-center gap-1.5">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </button>
                             </div>
                         </div>
                         <p class="text-[10px] text-zinc-400 uppercase tracking-widest">Los formatos de $250 requieren una llamada de 15 minutos previa para confirmar el formato correcto.</p>
-
-                        <div class="pt-4">
-                            <button onclick="switchTab('contacto')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-black hover:bg-brandGreen text-black bg-transparent">
-                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Ver opciones</span>
-                            </button>
-                        </div>
                     </div>
                 </div>
 
@@ -613,13 +648,14 @@
                         <p class="text-[10px] text-zinc-400 uppercase tracking-widest">Inversión mínima para Personal Shopping: $2,000 USD en compras · Precio por cotización · Requiere llamada de diagnóstico previa.</p>
 
                         <div class="pt-4">
-                            <button onclick="switchTab('contacto')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-black hover:bg-brandGreen text-black bg-transparent">
-                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Agendar llamada</span>
+                            <button onclick="contactarWhatsApp('el programa de Estrategia de Guardarropa')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-black hover:bg-brandGreen text-black bg-transparent flex items-center justify-center gap-2 w-fit">
+                                <i class="fab fa-whatsapp"></i>
+                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Escribir por WhatsApp</span>
                             </button>
                         </div>
                     </div>
                     <div class="overflow-hidden bg-zinc-50 aspect-[4/3] order-1 lg:order-2">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&q=80&w=1200"
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_01dec7cc46bf461d8fffba255ab77374~mv2.jpeg/v1/fill/w_1200,h_900,q_90,enc_avif,quality_auto/d352ca_01dec7cc46bf461d8fffba255ab77374~mv2.jpeg"
                              alt="Estrategia de Guardarropa"
                              class="img-hover-zoom w-full h-full object-cover grayscale"
                              onerror="this.src='https://placehold.co/800x600/e5e5e5/000000?text=Estrategia+de+Guardarropa'">
@@ -629,7 +665,7 @@
                 <!-- Bloque 3: Image Design Project — PROGRAMA / LISTA DE ESPERA -->
                 <div class="border-t border-black/10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                     <div class="overflow-hidden bg-zinc-50 aspect-[4/3] relative">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1200"
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_d3d34c664fa54b1eae5508761a785192~mv2.jpg/v1/fill/w_1200,h_900,q_90,enc_avif,quality_auto/d352ca_d3d34c664fa54b1eae5508761a785192~mv2.jpg"
                              alt="Image Design Project"
                              class="img-hover-zoom w-full h-full object-cover grayscale"
                              onerror="this.src='https://placehold.co/800x600/e5e5e5/000000?text=Image+Design+Project'">
@@ -649,8 +685,9 @@
                         <p class="text-[10px] text-zinc-400 uppercase tracking-widest">Cupo muy limitado — actualmente en lista de espera · Precio por cotización · No hay cotización sin conversación previa.</p>
 
                         <div class="pt-4">
-                            <button onclick="switchTab('contacto')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-black hover:bg-brandGreen text-black bg-transparent">
-                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Unirme a la lista de espera</span>
+                            <button onclick="contactarWhatsApp('unirme a la lista de espera de Image Design Project')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-black hover:bg-brandGreen text-black bg-transparent flex items-center justify-center gap-2 w-fit">
+                                <i class="fab fa-whatsapp"></i>
+                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Escribir por WhatsApp</span>
                             </button>
                         </div>
                     </div>
@@ -672,13 +709,14 @@
                         <p class="text-[10px] text-zinc-400 uppercase tracking-widest">Precio por cotización · No se aceptan proyectos sin llamada de descubrimiento previa.</p>
 
                         <div class="pt-4">
-                            <button onclick="switchTab('contacto')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-black hover:bg-brandGreen text-black bg-transparent">
-                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Agendar llamada de descubrimiento</span>
+                            <button onclick="contactarWhatsApp('el programa de Visibilidad & Posicionamiento')" class="group relative px-6 py-3 border border-black overflow-hidden transition-all duration-300 hover:text-black hover:bg-brandGreen text-black bg-transparent flex items-center justify-center gap-2 w-fit">
+                                <i class="fab fa-whatsapp"></i>
+                                <span class="relative z-10 text-xs uppercase tracking-widest font-semibold">Escribir por WhatsApp</span>
                             </button>
                         </div>
                     </div>
                     <div class="overflow-hidden bg-zinc-50 aspect-[4/3] order-1 lg:order-2">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200"
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_8e5771e8b763433d8bcc7d63fcd29a19~mv2.jpg/v1/fill/w_1200,h_900,q_90,enc_avif,quality_auto/d352ca_8e5771e8b763433d8bcc7d63fcd29a19~mv2.jpg"
                              alt="Visibilidad y Posicionamiento"
                              class="img-hover-zoom w-full h-full object-cover grayscale"
                              onerror="this.src='https://placehold.co/800x600/e5e5e5/000000?text=Visibilidad+y+Posicionamiento'">
@@ -701,7 +739,7 @@
                     </p>
                     <p class="text-xs text-zinc-400 uppercase tracking-widest">$99 · Online · Cupos disponibles</p>
                     <div class="pt-6">
-                        <button onclick="switchTab('contacto')" class="px-8 py-4 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-brandGreen hover:border hover:border-brandGreen transition-all duration-300">
+                        <button onclick="openBooking('Fashion Analysis Express')" class="px-8 py-4 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-brandGreen hover:border hover:border-brandGreen transition-all duration-300">
                             RESERVAR SESIÓN
                         </button>
                     </div>
@@ -715,8 +753,9 @@
                         <h3 class="text-2xl font-bold tracking-wide">¿Lista para trabajar juntas?</h3>
                         <p class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Cuéntame dónde estás y qué necesitas. En 24 horas te digo si puedo ayudarte y cómo.</p>
                     </div>
-                    <button onclick="switchTab('contacto')" class="group relative px-8 py-4 border border-black overflow-hidden transition-all duration-300 hover:text-white bg-transparent">
-                        <span class="relative z-10 text-xs uppercase tracking-widest font-bold">AGENDAR LLAMADA DE DIAGNÓSTICO</span>
+                    <button onclick="contactarWhatsApp('trabajar contigo en un proyecto de imagen')" class="group relative px-8 py-4 border border-black overflow-hidden transition-all duration-300 hover:text-white bg-transparent flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="relative z-10 text-xs uppercase tracking-widest font-bold">ESCRIBIR POR WHATSAPP</span>
                         <div class="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                     </button>
                 </div>
@@ -727,53 +766,56 @@
         <!-- ============================================== -->
         <section id="view-thefake" class="tab-view hidden opacity-0 transition-opacity duration-500">
             <div class="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-32">
-                <!-- AI Strategy Session como primer contenido visible -->
+                <!-- Encabezado real -->
                 <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                    <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-semibold">DIVA LOMAS PRESENTA</span>
+                    <span class="text-[10px] text-brandGreen uppercase tracking-[0.4em] font-semibold">DIVA LOMAS &times; RED MOON STUDIOS</span>
                     <h1 class="text-5xl md:text-6xl font-bold tracking-tight">The Fake Studio</h1>
                     <p class="text-sm text-zinc-500 font-normal italic">
-                        AI Strategy Session — el servicio principal de esta sección.
+                        Sesiones de producto y video de marca, hechos con inteligencia artificial.
                     </p>
                 </div>
 
-                <!-- Protagonista único block logic -->
                 <div class="border-t border-black pt-16 space-y-12">
                     <!-- Imagen grande arriba -->
                     <div class="w-full bg-zinc-100 aspect-[21/9] overflow-hidden">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1920" 
-                             alt="AI Strategy Session Visual Concept" 
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_29dfb50999004bd1aee81604b4d34e6b~mv2.jpeg/v1/fill/w_1920,h_823,q_90,enc_avif,quality_auto/d352ca_29dfb50999004bd1aee81604b4d34e6b~mv2.jpeg" 
+                             alt="The Fake Studio — Producción de imagen con IA" 
                              class="img-hover-zoom w-full h-full object-cover grayscale contrast-110"
-                             onerror="this.src='https://placehold.co/1200x500/e5e5e5/000000?text=AI+Strategy+Session'">
+                             onerror="this.src='https://placehold.co/1200x500/e5e5e5/000000?text=The+Fake+Studio'">
                     </div>
 
-                    <!-- Copy debajo y botón "RESERVAR AHORA" en verde sólido -->
+                    <!-- Copy real del servicio -->
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                         <div class="lg:col-span-8 space-y-6">
-                            <span class="text-[10px] text-brandGreen font-bold tracking-[0.3em] uppercase block">1:1 AI STRATEGY SESSION</span>
-                            <h2 class="text-4xl font-bold leading-tight">1:1 AI Strategy Session</h2>
-                            <div class="border border-dashed border-zinc-300 bg-zinc-50 p-5 text-xs text-zinc-500 leading-relaxed font-normal">
-                                <strong class="text-black">Copy pendiente por integrar:</strong> según la instrucción del documento anexo, este bloque debe usar el texto exacto del servicio "1:1 AI Strategy Session" ya activo en el backend de Wix, sin reescribirlo. Pega aquí esa descripción tal cual antes de publicar.
+                            <span class="text-[10px] text-brandGreen font-bold tracking-[0.3em] uppercase block">EL COLECTIVO</span>
+                            <h2 class="text-3xl md:text-4xl font-bold leading-tight">Producción visual sin presupuesto de producción tradicional.</h2>
+
+                            <div class="space-y-5 text-sm text-zinc-600 leading-relaxed font-normal">
+                                <p>The Fake Studio es un espacio creativo desarrollado por Diva Lomas y Red Moon Studios. Un colectivo creativo que produce fotografía de producto y video de marca para emprendedores que no tienen el presupuesto de una producción tradicional.</p>
+                                <p>Nació de una idea simple: hoy en día, crear algo poderoso no siempre requiere una ubicación imposible, un presupuesto exagerado o esa estructura de producción a la que solo unas pocas marcas tienen acceso. Lo que realmente se necesita es visión, dirección creativa, criterio estético y la capacidad de utilizar las herramientas disponibles de manera inteligente e intencional.</p>
+                                <p>The Fake Studio fue creado para ayudar a marcas, talentos y proyectos personales a reducir los costos de producción sin sacrificar la aspiración ni el impacto visual. El objetivo no es que las cosas se vean baratas; el objetivo es hacerlas más inteligentes: producir mejor, imaginar más lejos y construir visuales que se sientan actuales, elevados y memorables.</p>
+                                <p>Más allá de la eficiencia, The Fake Studio nació con algo más grande en mente: la capacidad de crear un trabajo que perdure. No solo contenido rápido hecho para llenar un feed, sino conceptos visuales con identidad, intención y la fuerza suficiente para respaldar una marca, una campaña o una narrativa personal a lo largo del tiempo.</p>
+                                <p>En The Fake Studio, creemos que la creatividad no debería estar limitada por la falta de recursos. En muchos casos, es ahí exactamente donde comienzan las ideas más interesantes. Cuando los conceptos sólidos, la dirección creativa y las herramientas contemporáneas se unen, es posible crear un trabajo extraordinario, elevar una imagen y desbloquear posibilidades que antes parecían reservadas para presupuestos mucho más grandes.</p>
                             </div>
+
+                            <blockquote class="border-l-4 border-brandGreen pl-6 py-2 space-y-1 mt-8">
+                                <p class="text-base md:text-lg font-bold italic leading-snug">Esto no reemplaza la creatividad humana. La expande.</p>
+                                <p class="text-base md:text-lg font-bold italic leading-snug">No reemplaza la visión. La agudiza.</p>
+                                <p class="text-base md:text-lg font-bold italic leading-snug">Y no se trata de fingir grandeza. Se trata de construirla de una nueva manera.</p>
+                            </blockquote>
                         </div>
                         <div class="lg:col-span-4 lg:border-l lg:border-black/10 lg:pl-10 space-y-6">
-                            <h4 class="text-xs uppercase tracking-widest font-semibold text-zinc-400">Detalles del Encuentro</h4>
-                            <ul class="text-xs space-y-3 font-normal">
-                                <li class="flex justify-between border-b border-black/10 pb-2">
-                                    <span>Duración</span>
-                                    <span class="font-medium text-zinc-400">[confirmar con Wix]</span>
-                                </li>
-                                <li class="flex justify-between border-b border-black/10 pb-2">
-                                    <span>Precio</span>
-                                    <span class="font-medium text-zinc-400">[confirmar con Wix]</span>
-                                </li>
-                                <li class="flex justify-between border-b border-black/10 pb-2">
-                                    <span>Modalidad</span>
-                                    <span class="font-medium text-zinc-400">[confirmar con Wix]</span>
-                                </li>
+                            <h4 class="text-xs uppercase tracking-widest font-semibold text-zinc-400">¿Para quién es?</h4>
+                            <ul class="text-xs space-y-3 font-normal text-zinc-600 leading-relaxed">
+                                <li class="border-b border-black/10 pb-3">Emprendedores y marcas sin presupuesto de producción tradicional</li>
+                                <li class="border-b border-black/10 pb-3">Fotografía de producto con dirección creativa profesional</li>
+                                <li class="border-b border-black/10 pb-3">Video de marca para campañas y contenido de largo aliento</li>
+                                <li class="border-b border-black/10 pb-3">Talento y proyectos personales que buscan una identidad visual duradera</li>
                             </ul>
-                            <div class="pt-4">
-                                <button onclick="switchTab('contacto')" class="w-full py-4 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-brandGreen hover:border hover:border-brandGreen transition-all duration-300 block text-center shadow-md">
-                                    RESERVAR AHORA
+                            <p class="text-[10px] text-zinc-400 uppercase tracking-widest">Alcance y precio por cotización, según el proyecto.</p>
+                            <div class="pt-2">
+                                <button onclick="openBooking('The Fake Studio — Llamada de Descubrimiento')" class="w-full py-4 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-brandGreen hover:border hover:border-brandGreen transition-all duration-300 block text-center shadow-md">
+                                    AGENDAR LLAMADA DE DESCUBRIMIENTO
                                 </button>
                             </div>
                         </div>
@@ -974,7 +1016,7 @@
                     
                     <!-- Retrato editorial -->
                     <div class="lg:col-span-6 overflow-hidden bg-zinc-100 aspect-[4/5] max-w-lg mx-auto lg:mx-0 w-full">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1200" 
+                        <img loading="lazy" src="https://static.wixstatic.com/media/d352ca_49421a2f358a4ad298f07882365e2a4b~mv2.jpg/v1/fill/w_960,h_1200,q_90,enc_avif,quality_auto/d352ca_49421a2f358a4ad298f07882365e2a4b~mv2.jpg" 
                              alt="Retrato de la Consultora de Imagen" 
                              class="img-hover-zoom w-full h-full object-cover grayscale contrast-110"
                              onerror="this.src='https://placehold.co/600x800/e5e5e5/000000?text=Retrato+Sobre+Mi'">
@@ -1080,7 +1122,7 @@
                                 <option value="estrategia-guardarropa" class="text-black">Estrategia de Guardarropa</option>
                                 <option value="image-design-project" class="text-black">Image Design Project (Lista de espera)</option>
                                 <option value="visibilidad-posicionamiento" class="text-black">Visibilidad & Posicionamiento</option>
-                                <option value="ai-strategy" class="text-black">The Fake Studio: AI Strategy Session</option>
+                                <option value="ai-strategy" class="text-black">The Fake Studio: Producción con IA</option>
                             </select>
                             <label for="service" class="peer-focus:font-medium absolute text-xs uppercase tracking-widest text-zinc-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brandGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                 Servicio de Interés
@@ -1185,12 +1227,12 @@
             <div class="h-1 w-full bg-brandGreen"></div>
 
             <div class="p-8 md:p-12">
-                <span class="text-[10px] text-brandGreen uppercase tracking-[0.35em] font-bold block mb-4">Antes de irte</span>
+                <span class="text-[10px] text-brandGreen uppercase tracking-[0.35em] font-bold block mb-4">Newsletter</span>
                 <h2 id="popup-title" class="text-2xl md:text-3xl font-bold tracking-tight leading-tight mb-4">
-                    ¿Sabes qué está diciendo tu imagen ahora mismo?
+                    Únete a mi lista privada.
                 </h2>
                 <p class="text-sm text-zinc-600 font-normal leading-relaxed mb-8">
-                    El Fashion Analysis Express es una sesión privada de 1 hora, 1:1 vía Zoom, donde defines exactamente tu próximo paso. $99 · Cupos disponibles.
+                    Recibe estrategia de imagen, acceso anticipado a mis eventos y contenido que no comparto en ningún otro lado — directo a tu correo.
                 </p>
 
                 <!-- Estado 1: Formulario -->
@@ -1203,7 +1245,7 @@
                         </label>
                     </div>
                     <button type="submit" class="w-full py-4 bg-black text-white text-xs uppercase tracking-widest font-bold hover:bg-brandGreen transition-colors duration-300">
-                        Quiero mi sesión →
+                        Suscribirme →
                     </button>
                     <button type="button" onclick="closeEntryPopup()" class="w-full text-center text-[10px] text-zinc-400 uppercase tracking-widest font-normal hover:text-black transition-colors duration-300 pt-1">
                         No, gracias — seguir navegando
@@ -1213,8 +1255,8 @@
                 <!-- Estado 2: Confirmación (oculto por defecto) -->
                 <div id="popup-success" class="hidden text-center py-4">
                     <span class="text-brandGreen text-3xl block mb-3">✓</span>
-                    <p class="text-sm font-bold uppercase tracking-widest mb-2">Gracias.</p>
-                    <p class="text-xs text-zinc-500 font-normal leading-relaxed">Te escribiremos en menos de 24 horas para confirmar tu sesión.</p>
+                    <p class="text-sm font-bold uppercase tracking-widest mb-2">¡Listo!</p>
+                    <p class="text-xs text-zinc-500 font-normal leading-relaxed">Ya eres parte de la lista. Pronto recibirás contenido directo a tu correo.</p>
                 </div>
             </div>
         </div>
@@ -1254,6 +1296,76 @@
         </div>
     </div>
 
+    <!-- ============================================== -->
+    <!-- Modal de Reserva: calendario para Fashion Analysis / Fashion Analysis con IA -->
+    <!-- ============================================== -->
+    <div id="booking-modal" class="hidden-case fixed inset-0 z-[85] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-service-name">
+        <div class="bg-white w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl relative">
+            <div class="sticky top-0 bg-white flex items-center justify-between px-6 py-5 border-b border-black/10 z-10">
+                <div>
+                    <span class="text-[9px] text-brandGreen uppercase tracking-[0.3em] font-bold block">Reservar sesión</span>
+                    <h3 id="booking-service-name" class="text-lg font-bold tracking-tight">Fashion Analysis</h3>
+                </div>
+                <button onclick="closeBooking()" aria-label="Cerrar calendario" class="tap-target flex items-center justify-center hover:text-brandGreen transition-colors duration-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <!-- Paso 1: Selección de mes / día -->
+            <div id="booking-step-calendar" class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <button onclick="changeBookingMonth(-1)" aria-label="Mes anterior" class="tap-target w-8 h-8 flex items-center justify-center border border-black/10 hover:border-brandGreen hover:text-brandGreen transition-colors duration-300">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <span id="booking-month-label" class="text-xs uppercase tracking-widest font-bold"></span>
+                    <button onclick="changeBookingMonth(1)" aria-label="Mes siguiente" class="tap-target w-8 h-8 flex items-center justify-center border border-black/10 hover:border-brandGreen hover:text-brandGreen transition-colors duration-300">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+                <div class="grid grid-cols-7 gap-1 text-center text-[9px] uppercase tracking-widest text-zinc-400 font-bold mb-2">
+                    <span>D</span><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span>
+                </div>
+                <div id="booking-days-grid" class="grid grid-cols-7 gap-1 text-center text-xs"></div>
+                <p class="text-[10px] text-zinc-400 uppercase tracking-widest mt-4 text-center">Disponibilidad de lunes a viernes · Horario Pacífico (PDT)</p>
+            </div>
+
+            <!-- Paso 2: Selección de horario -->
+            <div id="booking-step-time" class="hidden p-6 border-t border-black/10">
+                <button onclick="backToCalendar()" class="text-[10px] uppercase tracking-widest font-bold text-zinc-400 hover:text-brandGreen mb-4 flex items-center gap-1">&larr; Elegir otro día</button>
+                <p class="text-xs uppercase tracking-widest font-bold mb-3">Horarios disponibles para <span id="booking-selected-date" class="text-brandGreen"></span></p>
+                <div id="booking-time-slots" class="grid grid-cols-3 gap-2"></div>
+            </div>
+
+            <!-- Paso 3: Datos de contacto -->
+            <div id="booking-step-form" class="hidden p-6 border-t border-black/10 space-y-4">
+                <button onclick="backToTimeSlots()" class="text-[10px] uppercase tracking-widest font-bold text-zinc-400 hover:text-brandGreen mb-2 flex items-center gap-1">&larr; Elegir otro horario</button>
+                <p class="text-xs uppercase tracking-widest font-bold">
+                    <span id="booking-summary" class="text-brandGreen"></span>
+                </p>
+                <form id="booking-form" onsubmit="confirmBooking(event)" class="space-y-4 pt-2">
+                    <input type="text" id="booking-name" required placeholder="Nombre completo*"
+                           class="w-full text-sm px-0 py-2 border-0 border-b border-black/20 focus:outline-none focus:border-brandGreen transition-colors bg-transparent">
+                    <input type="email" id="booking-email" required placeholder="Email*"
+                           class="w-full text-sm px-0 py-2 border-0 border-b border-black/20 focus:outline-none focus:border-brandGreen transition-colors bg-transparent">
+                    <input type="tel" id="booking-phone" placeholder="WhatsApp (opcional)"
+                           class="w-full text-sm px-0 py-2 border-0 border-b border-black/20 focus:outline-none focus:border-brandGreen transition-colors bg-transparent">
+                    <button type="submit" class="w-full py-4 bg-brandGreen text-white text-xs uppercase tracking-widest font-bold hover:bg-black transition-all duration-300">
+                        Confirmar reserva
+                    </button>
+                </form>
+            </div>
+
+            <!-- Paso 4: Confirmación -->
+            <div id="booking-step-success" class="hidden p-10 text-center space-y-4">
+                <div class="w-12 h-12 rounded-full bg-brandGreen text-white flex items-center justify-center mx-auto text-xl font-bold">&check;</div>
+                <h4 class="text-lg font-bold tracking-tight">¡Reserva recibida!</h4>
+                <p class="text-sm text-zinc-500 leading-relaxed" id="booking-success-detail"></p>
+                <p class="text-[10px] text-zinc-400 uppercase tracking-widest">Recibirás la confirmación y el link de Zoom por email en las próximas 24 horas.</p>
+                <button onclick="closeBooking()" class="text-xs uppercase tracking-widest font-bold border-b border-black hover:text-brandGreen hover:border-brandGreen pb-1">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // ============================================
         // Portafolio: datos de casos de estudio
@@ -1282,10 +1394,17 @@
 
         function renderLightbox(index) {
             const img = document.getElementById('lightbox-image');
+            img.classList.remove('zoomed-in');
             img.src = PORTFOLIO_IMAGES[index];
             img.alt = 'Diva Lomas — Portafolio, imagen ' + (index + 1);
             document.getElementById('lightbox-index').textContent =
                 String(index + 1).padStart(2, '0') + ' / ' + String(PORTFOLIO_IMAGES.length).padStart(2, '0');
+            // Dispara la animación de "crecimiento" de la imagen una vez que carga
+            if (img.complete) {
+                requestAnimationFrame(() => img.classList.add('zoomed-in'));
+            } else {
+                img.onload = () => img.classList.add('zoomed-in');
+            }
         }
 
         function openLightbox(index) {
@@ -1481,6 +1600,150 @@
         }
 
         // Home CTA Form Submission Handler (réplica del formulario real "Hagamos que seas inolvidable")
+        // ============================================
+        // Calendario de Reservas: Fashion Analysis / Fashion Analysis con IA
+        // NOTA PARA JOSHUA: esta es una interfaz de reserva funcional en el front-end
+        // (guarda la selección y arma el resumen), pero para automatizar la confirmación
+        // real y el link de Zoom hace falta conectarla a un backend (Calendly, Wix Bookings
+        // o un webhook a Zapier/Make). Mientras tanto, cada reserva debe confirmarse
+        // manualmente por email o WhatsApp.
+        // ============================================
+        const bookingModal = document.getElementById('booking-modal');
+        const TIME_SLOTS = ['9:00 AM', '11:00 AM', '1:00 PM', '3:00 PM', '5:00 PM'];
+        const MONTH_NAMES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+        const DAY_NAMES = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+
+        let bookingServiceName = '';
+        let bookingViewDate = new Date();
+        let bookingSelectedDate = null;
+        let bookingSelectedTime = null;
+
+        function openBooking(serviceName) {
+            bookingServiceName = serviceName;
+            bookingSelectedDate = null;
+            bookingSelectedTime = null;
+            document.getElementById('booking-service-name').textContent = serviceName;
+            bookingViewDate = new Date();
+            renderBookingCalendar();
+            showBookingStep('calendar');
+            bookingModal.classList.remove('hidden-case');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBooking() {
+            bookingModal.classList.add('hidden-case');
+            document.body.style.overflow = '';
+            document.getElementById('booking-form').reset();
+        }
+
+        function showBookingStep(step) {
+            ['calendar', 'time', 'form', 'success'].forEach(s => {
+                document.getElementById('booking-step-' + s).classList.toggle('hidden', s !== step);
+            });
+        }
+
+        function changeBookingMonth(direction) {
+            bookingViewDate.setMonth(bookingViewDate.getMonth() + direction);
+            renderBookingCalendar();
+        }
+
+        function renderBookingCalendar() {
+            const year = bookingViewDate.getFullYear();
+            const month = bookingViewDate.getMonth();
+            document.getElementById('booking-month-label').textContent = `${MONTH_NAMES[month]} ${year}`;
+
+            const grid = document.getElementById('booking-days-grid');
+            grid.innerHTML = '';
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            for (let i = 0; i < firstDay; i++) {
+                grid.appendChild(document.createElement('span'));
+            }
+
+            for (let d = 1; d <= daysInMonth; d++) {
+                const cellDate = new Date(year, month, d);
+                const dayOfWeek = cellDate.getDay();
+                const isPast = cellDate < today;
+                const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+                const available = !isPast && !isWeekend;
+
+                const btn = document.createElement('button');
+                btn.textContent = d;
+                btn.setAttribute('aria-label', `${d} de ${MONTH_NAMES[month]}`);
+
+                if (available) {
+                    btn.className = 'tap-target aspect-square flex items-center justify-center hover:bg-brandGreen hover:text-white transition-colors duration-200 font-medium';
+                    btn.onclick = () => selectBookingDay(cellDate);
+                } else {
+                    btn.className = 'tap-target aspect-square flex items-center justify-center text-zinc-300 cursor-not-allowed';
+                    btn.disabled = true;
+                }
+                grid.appendChild(btn);
+            }
+        }
+
+        function selectBookingDay(date) {
+            bookingSelectedDate = date;
+            const label = `${DAY_NAMES[date.getDay()]} ${date.getDate()} de ${MONTH_NAMES[date.getMonth()]}`;
+            document.getElementById('booking-selected-date').textContent = label;
+
+            const slotsContainer = document.getElementById('booking-time-slots');
+            slotsContainer.innerHTML = '';
+            TIME_SLOTS.forEach(slot => {
+                const btn = document.createElement('button');
+                btn.textContent = slot;
+                btn.className = 'tap-target py-2 border border-black/15 text-[11px] font-medium hover:bg-brandGreen hover:text-white hover:border-brandGreen transition-colors duration-200';
+                btn.onclick = () => selectBookingTime(slot, label);
+                slotsContainer.appendChild(btn);
+            });
+
+            showBookingStep('time');
+        }
+
+        function backToCalendar() {
+            showBookingStep('calendar');
+        }
+
+        function selectBookingTime(slot, dateLabel) {
+            bookingSelectedTime = slot;
+            document.getElementById('booking-summary').textContent =
+                `${bookingServiceName} · ${dateLabel} · ${slot} (PDT)`;
+            showBookingStep('form');
+        }
+
+        function backToTimeSlots() {
+            showBookingStep('time');
+        }
+
+        function confirmBooking(event) {
+            event.preventDefault();
+            const name = document.getElementById('booking-name').value;
+            const dateLabel = document.getElementById('booking-selected-date').textContent;
+            document.getElementById('booking-success-detail').textContent =
+                `${name}, tu sesión de ${bookingServiceName} quedó registrada para el ${dateLabel} a las ${bookingSelectedTime} (PDT).`;
+            showBookingStep('success');
+        }
+
+        // Cerrar al hacer click fuera de la tarjeta
+        bookingModal.addEventListener('click', function(e) {
+            if (e.target === bookingModal) closeBooking();
+        });
+
+        // ============================================
+        // WhatsApp: abre un chat pre-llenado según el servicio/evento de interés
+        // Número real de atención: 664 437 9618
+        // ============================================
+        function contactarWhatsApp(nombreServicio) {
+            const numero = '526644379618';
+            const mensaje = `Hola! Estoy interesadx en ${nombreServicio}, ¿podrías proporcionarme más información por favor?`;
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
         function handleHomeFormSubmit(event) {
             event.preventDefault();
             const alertBox = document.getElementById('home-form-success');
